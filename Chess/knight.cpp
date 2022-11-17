@@ -1,14 +1,16 @@
 #include "knight.h"
 
 
-/**
- @inheritdoc
-*/
+
 
 
 Knight::Knight(int row, int column) : Piece(row, column) {
 
 }
+
+/**
+ @inheritdoc
+*/
 
 
 void Knight::makeMove(int diffRow, int diffColumn) {
