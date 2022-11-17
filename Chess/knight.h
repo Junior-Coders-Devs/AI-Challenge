@@ -1,8 +1,9 @@
 #ifndef H_KNIGHT
 #define H_KNIGHT
+
 #include "piece.h"
-#include <bits/stdc++.h>
-using namespace std;
+#include <vector>
+
 
 class Knight : public Piece
 {
@@ -25,10 +26,11 @@ public:
 
     virtual void makeMove(int diffRow, int diffColumn);
 
-    vector<MoveBy> getMoves();
+    bool isJump(int diffRow, int diffColumn);
 
 private:
-    const vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
+
+    const std::vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
         {2, -1}, {2, 1}, {-1, 2}, {-2, -1}
     };
 };
