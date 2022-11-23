@@ -15,7 +15,8 @@ Pawn::Pawn(int row, int column) : Piece(row, column)
 
 void Pawn::makeMove(int diffRow, int diffColumn)
 {
-    bool ok = (this->isPawnMove(diffRow, diffColumn) & this->isValidMove(diffRow, diffColumn));
+    bool ok = this->isMoveLegal(diffRow, diffColumn);
+    ok &= this->isValidMove(diffRow, diffColumn);
 
     if(!ok)
         return;
@@ -27,14 +28,17 @@ void Pawn::makeMove(int diffRow, int diffColumn)
     this->setColumn(currentColumn + diffColumn);
 }
 
-bool Pawn::isPawnMove(int diffRow, int diffColumn)
+bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 {
      if(diffRow > 2 || diffColumn > 1)
         return 0;
 
+     if(diffRow == 2 && diffColumn)
+        return 0;
+
      int currentRow = this->getRow();
 
-     if(diffRow == 2 && ((currentRow - diffRow) % 5 || diffColumn))
+     if(diffRow == 2 && (currentRow - diffRow) % 5)
         return 0;
 
      return 1;

@@ -12,7 +12,9 @@ public:
 
     virtual void makeMove(int diffRow, int diffColumn);
 
-    bool isPawnMove(int diffRow, int diffColumn);
+private:
+
+    bool isMoveLegal(int diffRow, int diffColumn);
 
 };
 
