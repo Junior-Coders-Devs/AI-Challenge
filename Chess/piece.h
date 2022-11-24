@@ -16,8 +16,6 @@ class Piece {
 
     protected:
         virtual bool isValidMove(int diffRow, int diffColumn) const;
-
-    private:
         int row;
         int column;
 };
