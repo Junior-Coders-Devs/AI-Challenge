@@ -2,20 +2,19 @@
 #define H_PAWN
 
 #include "piece.h"
+#include <cmath>
 
 class Pawn : public Piece
 {
+    public:
 
-public:
+        Pawn(int row, int column);
 
-    Pawn(int row, int column);
+        virtual void makeMove(int diffRow, int diffColumn);
 
-    virtual void makeMove(int diffRow, int diffColumn);
+    private:
 
-private:
-
-    bool isMoveLegal(int diffRow, int diffColumn);
-
+        bool isMoveLegal(int diffRow, int diffColumn);
 };
 
 

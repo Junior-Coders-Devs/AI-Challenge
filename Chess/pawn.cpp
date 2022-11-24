@@ -1,21 +1,16 @@
 #include "pawn.h"
 
-
-Pawn::Pawn(int row, int column) : Piece(row, column)
-{
-    this->setColumn(column);
-    this->setRow(row);
-}
+Pawn::Pawn(int row, int column) : Piece(row, column) {}
 
 
 /**
   @inheritdoc
 */
-
-
 void Pawn::makeMove(int diffRow, int diffColumn)
 {
-    bool ok = this->isMoveLegal(diffRow, diffColumn);
+    bool ok = true;
+
+    ok &= this->isMoveLegal(diffRow, diffColumn);
     ok &= this->isValidMove(diffRow, diffColumn);
 
     if(!ok)
@@ -30,15 +25,15 @@ void Pawn::makeMove(int diffRow, int diffColumn)
 
 bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 {
-     if(diffRow > 2 || diffColumn > 1)
+     if(abs(diffRow) > 2 || abs(diffColumn) > 1)
         return 0;
 
-     if(diffRow == 2 && diffColumn)
+     if(abs(diffRow) == 2 && diffColumn)
         return 0;
 
      int currentRow = this->getRow();
 
-     if(diffRow == 2 && (currentRow - diffRow) % 5)
+     if(abs(diffRow) == 2 && (currentRow != 2 && currentRow != 7))
         return 0;
 
      return 1;
