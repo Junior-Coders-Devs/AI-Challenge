@@ -10,7 +10,7 @@ class Pawn : public Piece
 
         Pawn(int row, int column);
 
-        virtual void makeMove(int diffRow, int diffColumn);
+        void makeMove(int diffRow, int diffColumn);
 
     private:
 

@@ -25,15 +25,15 @@ void Pawn::makeMove(int diffRow, int diffColumn)
 
 bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 {
-     if(abs(diffRow) > 2 || abs(diffColumn) > 1)
+     if(std::abs(diffRow) > 2 || std::abs(diffColumn) > 1)
         return 0;
 
-     if(abs(diffRow) == 2 && diffColumn)
+     if(std::abs(diffRow) == 2 && diffColumn)
         return 0;
 
      int currentRow = this->getRow();
 
-     if(abs(diffRow) == 2 && (currentRow != 2 && currentRow != 7))
+     if(std::abs(diffRow) == 2 && (currentRow != 2 && currentRow != 7))
         return 0;
 
      return 1;
