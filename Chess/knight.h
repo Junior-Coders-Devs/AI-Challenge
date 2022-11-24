@@ -4,35 +4,33 @@
 #include "piece.h"
 #include <vector>
 
-
 class Knight : public Piece
 {
+    public:
 
-public:
-
-    struct MoveBy
-    {
-        int rowDiff;
-        int columnDiff;
-
-        bool operator == (MoveBy & a) const
+        struct MoveBy
         {
-            return (a.rowDiff == rowDiff && a.columnDiff == columnDiff);
-        }
+            int rowDiff;
+            int columnDiff;
 
-    };
+            bool operator == (MoveBy & a) const
+            {
+                return (a.rowDiff == rowDiff && a.columnDiff == columnDiff);
+            }
 
-    Knight(int row, int column);
+        };
 
-    virtual void makeMove(int diffRow, int diffColumn);
+        Knight(int row, int column);
 
-    bool isJump(int diffRow, int diffColumn);
+        void makeMove(int diffRow, int diffColumn);
 
-private:
+    private:
 
-    const std::vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
-                                       {2, -1}, {2, 1}, {-1, 2}, {-2, -1}
-    };
+        bool isJump(int diffRow, int diffColumn);
+
+        const std::vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
+                                           {2, -1}, {2, 1}, {-1, 2}, {-2, -1}
+        };
 };
 
 

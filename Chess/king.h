@@ -7,9 +7,9 @@ class King: public Piece{
 
     public:
         King(int row, int column);
-        virtual void makeMove(int diffRow, int diffColumn);
+        void makeMove(int diffRow, int diffColumn);
 
-    protected:
+    private:
         bool isMoveLegal(int diffRow, int diffColumn);
 };
 
