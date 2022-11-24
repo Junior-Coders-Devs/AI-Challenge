@@ -1,17 +1,17 @@
 #include "rook.h"
 
-Rook::Rook(int row, int column):Piece(row, column)
-{
-    this->row=row;
-    this->column=column;
-}
+Rook::Rook(int row, int column):Piece(row, column){}
 
 /**
  @inheritdoc
 */
 void Rook::makeMove(int diffRow, int diffColumn)
 {
-    if(!isValidMove(diffRow,diffColumn))
+    if(!Piece::isValidMove(diffRow, diffColumn)) {
+        return ;
+    }
+
+    if(!isMoveLegal(diffRow, diffColumn))
         return;
 
     setRow(this->row + diffRow);
@@ -19,23 +19,7 @@ void Rook::makeMove(int diffRow, int diffColumn)
 }
 
 
-bool Rook::isValidMove(int diffRow, int diffColumn)
+bool Rook::isMoveLegal(int diffRow, int diffColumn)
 {
-    bool ok=true;
-    int currRow=this->row+diffRow;
-    int currColumn=this->column+diffColumn;
-    if(currRow>=1 && currRow<=8 && currColumn>=1 && currColumn<=8);
-    else
-    {
-        ok=0;
-    }
-    if((diffRow!=0 && diffColumn==0) || (diffRow==0 && diffColumn!=0));
-    else
-    {
-        ok=0;
-    }
-    return ok;
+    return (diffRow != 0 && diffColumn == 0) || (diffRow == 0 && diffColumn != 0);
 }
-
-
-
