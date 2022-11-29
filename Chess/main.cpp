@@ -11,7 +11,6 @@ int main()
     Board board;
 
     board.init();
-
     getch();
 
     return 0;

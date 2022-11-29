@@ -4,4 +4,5 @@ Board::Board() {}
 
 void Board::init() {
     painter.initializeWindow();
+    painter.initializePieces();
 }
