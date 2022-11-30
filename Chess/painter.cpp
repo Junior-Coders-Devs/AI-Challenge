@@ -36,39 +36,23 @@ void Painter::initializeBlackPieces()
 
     for(int i = 1; i <= 8; i++)
     {
-        for(int j = 1; j <= 8; j++)
+        for(int j = 1; j <= 2; j++)
         {
             if((i + j) % 2)
             {
                 if(j == 1)
-                {
-                    if(i == 2)
-                        loadPiece(i, j, "BlackOnBlack/knight.jpg");
-                    else if(i == 4)
-                        loadPiece(i, j, "BlackOnBlack/queen.jpg");
-                    else if(i == 6)
-                        loadPiece(i, j, "BlackOnBlack/bishop.jpg");
-                    else
-                        loadPiece(i, j, "BlackOnBlack/rook.jpg");
-                }
+                    loadPiece(i, j, BlackOnBlackPaths[i / 2 - 1]);
+
                 else if(j == 2)
-                    loadPiece(i, j, "BlackOnBlack/pawn.jpg");
+                    loadPiece(i, j, BlackOnBlackPaths[4]);
             }
             else
             {
                 if(j == 1)
-                {
-                    if(i == 7)
-                        loadPiece(i, j, "BlackOnWhite/knight.jpg");
-                    else if(i == 5)
-                        loadPiece(i, j, "BlackOnWhite/king.jpg");
-                    else if(i == 3)
-                        loadPiece(i, j, "BlackOnWhite/bishop.jpg");
-                    else
-                        loadPiece(i, j, "BlackOnWhite/rook.jpg");
-                }
+                    loadPiece(i, j, BlackOnWhitePaths[(8 - i) / 2]);
+
                 else if(j == 2)
-                    loadPiece(i, j, "BlackOnWhite/pawn.jpg");
+                    loadPiece(i, j, BlackOnWhite[4]);
             }
         }
     }
