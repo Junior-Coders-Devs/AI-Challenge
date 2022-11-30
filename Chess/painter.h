@@ -16,6 +16,8 @@ class Painter {
     private:
         void initializeWhitePieces();
         void initializeBlackPieces();
+        void drawSquare(int row, int column, int patrat, char image[]);
+        void loadPiece(int row, int column, char image[]);
 };
 
 #endif // H_PAINTER
