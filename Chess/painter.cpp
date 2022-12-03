@@ -1,5 +1,6 @@
 #include "painter.h"
 
+
 Painter::Painter() {}
 
 void Painter::initializeWindow()
@@ -15,12 +16,14 @@ void Painter::initializeBoard()
     {
         for(int j = 1; j <= 8; j++)
         {
+            char background[PATH_SIZE];
 
-            if((i + j) % 2)
-                drawSquare(i, j, 0, "Backgrounds/Black.jpg");
+            if((i + j) % 2 == 0)
+                strcpy(background, _WHITE);
             else
-                drawSquare(i, j, 1, "Backgrounds/White.jpg");
+                strcpy(background, _BLACK);
 
+            drawSquare(i, j, background);
         }
     }
 }
@@ -38,22 +41,7 @@ void Painter::initializeBlackPieces()
     {
         for(int j = 1; j <= 2; j++)
         {
-            if((i + j) % 2)
-            {
-                if(j == 1)
-                    loadPiece(i, j, BlackOnBlackPaths[i / 2 - 1]);
-
-                else if(j == 2)
-                    loadPiece(i, j, BlackOnBlackPaths[4]);
-            }
-            else
-            {
-                if(j == 1)
-                    loadPiece(i, j, BlackOnWhitePaths[(8 - i) / 2]);
-
-                else if(j == 2)
-                    loadPiece(i, j, BlackOnWhite[4]);
-            }
+            piecePainter.loadPiece(i, j);
         }
     }
 
@@ -64,10 +52,10 @@ void Painter::initializeWhitePieces()
     // TODO
 }
 
-void Painter::drawSquare(int row, int column, int patrat, char image[])
+void Painter::drawSquare(int row, int column, char image[])
 {
     int diffCol = (column - 1) * SQUARE_SIZE;
-    int diffLin = (row - 1 ) * SQUARE_SIZE;
+    int diffLin = (row - 1) * SQUARE_SIZE;
 
     line(OFFSET_X + diffLin, OFFSET_Y + diffCol,
          OFFSET_X + diffLin, OFFSET_Y + diffCol + SQUARE_SIZE);
@@ -81,25 +69,8 @@ void Painter::drawSquare(int row, int column, int patrat, char image[])
     line(OFFSET_X + diffLin + SQUARE_SIZE, OFFSET_Y + diffCol,
          OFFSET_X + diffLin, OFFSET_Y + diffCol);
 
-    if(patrat == 0)
-    {
-
-        readimagefile(image, OFFSET_X + diffLin, OFFSET_Y + diffCol,
-                      OFFSET_X + diffLin + SQUARE_SIZE, OFFSET_Y + diffCol + SQUARE_SIZE);
-    }
-    else if(patrat == 1)
-    {
-
-        readimagefile(image, OFFSET_X + diffLin, OFFSET_Y + diffCol,
-                      OFFSET_X + diffLin + SQUARE_SIZE, OFFSET_Y + diffCol + SQUARE_SIZE);
-    }
-}
-
-void Painter::loadPiece(int row, int column, char image[])
-{
-    int diffCol = (column - 1) * SQUARE_SIZE;
-    int diffLin = (row - 1 ) * SQUARE_SIZE;
 
     readimagefile(image, OFFSET_X + diffLin, OFFSET_Y + diffCol,
                   OFFSET_X + diffLin + SQUARE_SIZE, OFFSET_Y + diffCol + SQUARE_SIZE);
+
 }
