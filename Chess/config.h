@@ -9,4 +9,14 @@ const int OFFSET_Y = 100;
 
 const int SQUARE_SIZE = 70;
 
+const char pieceLoc[][20]={
+                    "rook.jpg",
+                    "knight.jpg",
+                    "bishop.jpg",
+                    "queen.jpg",
+                    "king.jpg",
+                    "bishop.jpg",
+                    "knight.jpg",
+                    "rook.jpg"};
+
 #endif // H_CONFIG

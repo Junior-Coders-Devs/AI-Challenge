@@ -14,11 +14,9 @@ class Painter {
         void initializePieces();
 
     private:
-        void setPieceLocalNames(char a[10][60]);
-        void initWhitePiece(char a[], int lin, int col, char name[]);
+        void initWhitePiece(char a[], int lin, int col, const char name[]);
         void initializeWhitePieces();
         void initializeBlackPieces();
-        void initWhitePawns(char a[], char b[], char c[]);
 };
 
 #endif // H_PAINTER
