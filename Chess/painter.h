@@ -1,8 +1,7 @@
 #ifndef H_PAINTER
 #define H_PAINTER
 
-#include "graphics.h"
-#include "config.h"
+#include "piecepainter.h"
 
 class Painter {
 
@@ -16,6 +15,9 @@ class Painter {
     private:
         void initializeWhitePieces();
         void initializeBlackPieces();
+        void drawSquare(int row, int column, char image[]);
+
+        PiecePainter piecePainter;
 };
 
 #endif // H_PAINTER
