@@ -12,18 +12,18 @@ void Painter::initializeWindow()
 void Painter::initializeBoard()
 {
 
-    for(int i = 1; i <= 8; i++)
+    for(int lineIndex = 1; lineIndex <= 8; lineIndex++)
     {
-        for(int j = 1; j <= 8; j++)
+        for(int columnIndex = 1; columnIndex <= 8; columnIndex++)
         {
             char background[PATH_SIZE];
 
-            if((i + j) % 2 == 0)
-                strcpy(background, _WHITE);
+            if((lineIndex + columnIndex) % 2 == 0)
+                strcpy(background, EMPTY_WHITE_CELL);
             else
-                strcpy(background, _BLACK);
+                strcpy(background, EMPTY_BLACK_CELL);
 
-            drawSquare(i, j, background);
+            drawSquare(lineIndex, columnIndex, background);
         }
     }
 }
@@ -36,15 +36,18 @@ void Painter::initializePieces()
 
 void Painter::initializeBlackPieces()
 {
+    piecePainter.paintPiece(1, 1, ROOK, _BLACK);
+    piecePainter.paintPiece(1, 2, KNIGHT, _BLACK);
+    piecePainter.paintPiece(1, 3, BISHOP, _BLACK);
+    piecePainter.paintPiece(1, 4, QUEEN, _BLACK);
+    piecePainter.paintPiece(1, 5, KING, _BLACK);
+    piecePainter.paintPiece(1, 6, BISHOP, _BLACK);
+    piecePainter.paintPiece(1, 7, KNIGHT, _BLACK);
+    piecePainter.paintPiece(1, 8, ROOK, _BLACK);
 
-    for(int i = 1; i <= 8; i++)
-    {
-        for(int j = 1; j <= 2; j++)
-        {
-            piecePainter.loadPiece(i, j);
-        }
+    for(int columnIndex = 1; columnIndex <= 8; columnIndex++) {
+        piecePainter.paintPiece(2, columnIndex, PAWN, _BLACK);
     }
-
 }
 
 void Painter::initializeWhitePieces()

@@ -28,8 +28,23 @@ const char BlackOnWhitePaths[][PATH_SIZE] = {
                                             "BlackOnWhite/pawn.jpg",
                                             "BlackOnWhite/queen.jpg"};
 
-const char _BLACK[] = "Backgrounds/Black.jpg";
 
-const char _WHITE[] = "Backgrounds/White.jpg";
+const char EMPTY_BLACK_CELL[] = "Backgrounds/Black.jpg";
+
+const char EMPTY_WHITE_CELL[] = "Backgrounds/White.jpg";
+
+enum Color {
+    _WHITE,
+    _BLACK
+};
+
+enum PieceType {
+    KNIGHT,
+    QUEEN,
+    BISHOP,
+    ROOK,
+    PAWN,
+    KING
+};
 
 #endif // H_CONFIG

@@ -3,29 +3,29 @@
 PiecePainter::PiecePainter(){}
 
 
-void PiecePainter::loadPiece(int row, int column)
+void PiecePainter::paintPiece(int column, int row, PieceType pieceType, Color pieceColor)
 {
+
+    Color squareColor = getColorForCell(row, column);
+    const char* piecePath = piecePathLoader.getPath(squareColor, pieceColor, pieceType);
+
     int diffCol = (column - 1) * SQUARE_SIZE;
     int diffLin = (row - 1) * SQUARE_SIZE;
 
-    char image[PATH_SIZE];
+    loadPiece(piecePath, diffLin, diffCol);
+}
 
-    if((row + column) % 2)
-    {
-        if(column == 1)
-            strcpy(image, BlackOnBlackPaths[row / 2 - 1]);
+Color PiecePainter::getColorForCell(int row, int column) {
 
-        else if(column == 2)
-            strcpy(image, BlackOnBlackPaths[4]);
+    if((row + column) % 2 == 0) {
+
+        return _WHITE;
     }
-    else
-    {
-        if(column == 1)
-            strcpy(image, BlackOnWhitePaths[(8 - row) / 2]);
 
-        else if(column == 2)
-            strcpy(image, BlackOnWhitePaths[4]);
-    }
+    return _BLACK;
+}
+
+void PiecePainter::loadPiece(const char* image, int diffLin, int diffCol) {
 
     readimagefile(image, OFFSET_X + diffLin, OFFSET_Y + diffCol,
                   OFFSET_X + diffLin + SQUARE_SIZE, OFFSET_Y + diffCol + SQUARE_SIZE);
