@@ -28,6 +28,22 @@ const char BlackOnWhitePaths[][PATH_SIZE] = {
                                             "BlackOnWhite/pawn.jpg",
                                             "BlackOnWhite/queen.jpg"};
 
+const char WhiteOnBlackPaths[][PATH_SIZE] = {
+                                            "WhiteOnBlack/knight.jpg",
+                                            "WhiteOnBlack/king.jpg",
+                                            "WhiteOnBlack/bishop.jpg",
+                                            "WhiteOnBlack/rook.jpg",
+                                            "WhiteOnBlack/pawn.jpg",
+                                            "WhiteOnBlack/queen.jpg"};
+
+const char WhiteOnWhitePaths[][PATH_SIZE] = {
+                                            "WhiteOnWhite/knight.jpg",
+                                            "WhiteOnWhite/king.jpg",
+                                            "WhiteOnWhite/bishop.jpg",
+                                            "WhiteOnWhite/rook.jpg",
+                                            "WhiteOnWhite/pawn.jpg",
+                                            "WhiteOnWhite/queen.jpg"};
+
 
 const char EMPTY_BLACK_CELL[] = "Backgrounds/Black.jpg";
 

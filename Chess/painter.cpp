@@ -52,7 +52,18 @@ void Painter::initializeBlackPieces()
 
 void Painter::initializeWhitePieces()
 {
-    // TODO
+    piecePainter.paintPiece(8, 1, ROOK, _WHITE);
+    piecePainter.paintPiece(8, 2, KNIGHT, _WHITE);
+    piecePainter.paintPiece(8, 3, BISHOP, _WHITE);
+    piecePainter.paintPiece(8, 4, QUEEN, _WHITE);
+    piecePainter.paintPiece(8, 5, KING, _WHITE);
+    piecePainter.paintPiece(8, 6, BISHOP, _WHITE);
+    piecePainter.paintPiece(8, 7, KNIGHT, _WHITE);
+    piecePainter.paintPiece(8, 8, ROOK, _WHITE);
+
+    for(int columnIndex = 1; columnIndex <= 8; columnIndex++){
+        piecePainter.paintPiece(7, columnIndex, PAWN, _WHITE);
+    }
 }
 
 void Painter::drawSquare(int row, int column, char image[])

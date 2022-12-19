@@ -29,11 +29,15 @@ const char* PiecePathLoader::getQueenPath(Color squareColor, Color pieceColor) {
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[1];
+                case _WHITE:
+                    return WhiteOnBlackPaths[5];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
-                    return BlackOnWhitePaths[1];
+                    return BlackOnWhitePaths[5];
+                case _WHITE:
+                    return WhiteOnWhitePaths[5];
             }
     }
 }
@@ -46,11 +50,15 @@ const char* PiecePathLoader::getKingPath(Color squareColor, Color pieceColor) {
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[5];
+                case _WHITE:
+                    return WhiteOnBlackPaths[1];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnWhitePaths[1];
+                case _WHITE:
+                    return WhiteOnWhitePaths[1];
             }
     }
 }
@@ -62,11 +70,15 @@ const char* PiecePathLoader::getKnightPath(Color squareColor, Color pieceColor) 
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[0];
+                case _WHITE:
+                    return WhiteOnBlackPaths[0];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnWhitePaths[0];
+                case _WHITE:
+                    return WhiteOnWhitePaths[0];
             }
     }
 }
@@ -78,11 +90,15 @@ const char* PiecePathLoader::getPawnPath(Color squareColor, Color pieceColor) {
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[4];
+                case _WHITE:
+                    return WhiteOnBlackPaths[4];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnWhitePaths[4];
+                case _WHITE:
+                    return WhiteOnWhitePaths[4];
             }
     }
 }
@@ -94,11 +110,15 @@ const char* PiecePathLoader::getRookPath(Color squareColor, Color pieceColor) {
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[3];
+                case _WHITE:
+                    return WhiteOnBlackPaths[3];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnWhitePaths[3];
+                case _WHITE:
+                    return WhiteOnWhitePaths[3];
             }
     }
 }
@@ -110,11 +130,15 @@ const char* PiecePathLoader::getBishopPath(Color squareColor, Color pieceColor) 
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnBlackPaths[2];
+                case _WHITE:
+                    return WhiteOnBlackPaths[2];
             }
         case _WHITE:
             switch(pieceColor) {
                 case _BLACK:
                     return BlackOnWhitePaths[2];
+                case _WHITE:
+                    return WhiteOnWhitePaths[2];
             }
     }
 }
