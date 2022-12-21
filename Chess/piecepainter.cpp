@@ -2,6 +2,16 @@
 
 PiecePainter::PiecePainter(){}
 
+/*
+     Functionality to paint a piece depending on it's position on the table(row, column), type and color
+  
+     @params
+     column -> the column on which the piece is located
+     row -> the row on which the piece is located
+     pieceType -> using the enum PieceType, it identifies the piece type(pawn, knight, king...)
+     pieceColor -> using the enum Color, it identifies the piece color(WHITE or BLACK)
+     
+*/
 
 void PiecePainter::paintPiece(int column, int row, PieceType pieceType, Color pieceColor)
 {
@@ -15,6 +25,14 @@ void PiecePainter::paintPiece(int column, int row, PieceType pieceType, Color pi
     loadPiece(piecePath, diffLin, diffCol);
 }
 
+/*
+     Functionality to determine the cell color
+
+     @params
+     column, row
+*/
+
+
 Color PiecePainter::getColorForCell(int row, int column) {
 
     if((row + column) % 2 == 0) {
@@ -24,6 +42,17 @@ Color PiecePainter::getColorForCell(int row, int column) {
 
     return _BLACK;
 }
+
+
+/*
+    Functionality to load the Piece on the table based on it's position
+
+    @params
+    image -> the location of the image
+    diffLin -> locating the down right corner of the image(line)
+    diffCol -> locating the down right corner of the image(column)
+*/
+
 
 void PiecePainter::loadPiece(const char* image, int diffLin, int diffCol) {
 
