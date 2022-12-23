@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1671812015 source:d:\documents\ai challenge\ai-challenge\chess\main.cpp
+	<iostream>
+	<cassert>
+	"board.h"
+
+1671811555 d:\documents\ai challenge\ai-challenge\chess\board.h
+	"painter.h"
+	"piece.h"
+	"rook.h"
+	"bishop.h"
+	"queen.h"
+	"king.h"
+	"pawn.h"
+	"knight.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\painter.h
+	"piecepainter.h"
+
+1671807824 d:\documents\ai challenge\ai-challenge\chess\piecepainter.h
+	<string.h>
+	<vector>
+	<map>
+	"graphics.h"
+	"piecepathloader.h"
+	"config.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\piecepathloader.h
+	"config.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\config.h
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\rook.cpp
+	"rook.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\rook.h
+	"piece.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\piece.h
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\bishop.cpp
+	"bishop.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\bishop.h
+	"piece.h"
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
+	"king.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\king.h
+	"piece.h"
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\knight.cpp
+	"knight.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\knight.h
+	"piece.h"
+	<vector>
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\painter.cpp
+	"painter.h"
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\pawn.cpp
+	"pawn.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\pawn.h
+	"piece.h"
+	<cmath>
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\piece.cpp
+	"piece.h"
+
+1671643800 source:d:\documents\ai challenge\ai-challenge\chess\piecepainter.cpp
+	"piecepainter.h"
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\piecepathloader.cpp
+	"piecepathloader.h"
+
+1671640362 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
+	"queen.h"
+
+1671640362 d:\documents\ai challenge\ai-challenge\chess\queen.h
+	"piece.h"
+
+1671812008 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
+	"board.h"
+
+1671809142 source:d:\documents\ai challenge\ai-challenge\chess\checkvalidator.cpp
+	"checkvalidator.h"
+
+1671808804 d:\documents\ai challenge\ai-challenge\chess\checkvalidator.h
+	"board.h"
+	"config.h"
+

@@ -2,6 +2,8 @@
 #define H_PIECPAINTER
 
 #include <string.h>
+#include <vector>
+#include <map>
 #include "graphics.h"
 #include "piecepathloader.h"
 #include "config.h"
