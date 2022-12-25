@@ -2,6 +2,15 @@
 
 PiecePathLoader::PiecePathLoader() {}
 
+
+/**
+    Functionality to get the path of a piece
+
+    @params
+    squareColor -> the color of the square it is in
+    pieceColor -> the color of the piece
+    type -> the piece type (Pawn,Queen,Rook etc.)
+*/
 const char* PiecePathLoader::getPath(Color squareColor, Color pieceColor, PieceType type) {
 
     switch(type) {
