@@ -7,11 +7,9 @@ Queen::Queen(int row, int column): Piece(row, column) {}
 */
 void Queen::makeMove(int diffRow, int diffColumn) {
 
-    if(!isValidMove(diffRow, diffColumn))
-        return;
-
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
+
 }
 
 

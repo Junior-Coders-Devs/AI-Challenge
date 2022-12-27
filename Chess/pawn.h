@@ -11,6 +11,7 @@ class Pawn : public Piece
         Pawn(int row, int column);
 
         void makeMove(int diffRow, int diffColumn);
+        bool isValidMove(int diffRow, int diffColumn);
 
     private:
 

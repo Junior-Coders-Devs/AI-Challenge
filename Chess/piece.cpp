@@ -1,5 +1,6 @@
 #include "piece.h"
 
+
 Piece::Piece(int row, int column) {
     this->row = row;
     this->column = column;
@@ -16,7 +17,7 @@ void Piece::makeMove(int diffRow, int diffColumn) {
     // To be implemented by every type of piece
 }
 
-bool Piece::isValidMove(int diffRow, int diffColumn) const {
+bool Piece::isValidMove(int diffRow, int diffColumn){
 
     bool ok = true;
 

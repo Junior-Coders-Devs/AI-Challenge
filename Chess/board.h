@@ -1,6 +1,8 @@
 #ifndef H_BOARD
 #define H_BOARD
 
+#include <vector>
+#include <map>
 #include "painter.h"
 #include "piece.h"
 #include "rook.h"
@@ -18,7 +20,7 @@ class Board {
         void init();
         void initByColor(Color color);
         void initMapPieces();
-        std::map<Color, std::vector<Piece*>> getPieces();
+        std::vector<Piece*> getPieces(Color color);
     private:
         Painter painter;
         std::map<Color, std::vector<Piece*>> pieces;

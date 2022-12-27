@@ -8,19 +8,12 @@ Pawn::Pawn(int row, int column) : Piece(row, column) {}
 */
 void Pawn::makeMove(int diffRow, int diffColumn)
 {
-    bool ok = true;
-
-    ok &= this->isMoveLegal(diffRow, diffColumn);
-    ok &= this->isValidMove(diffRow, diffColumn);
-
-    if(!ok)
-        return;
-
     int currentRow = this->getRow();
     int currentColumn = this->getColumn();
 
     this->setRow(currentRow + diffRow);
     this->setColumn(currentColumn + diffColumn);
+
 }
 
 bool Pawn::isMoveLegal(int diffRow, int diffColumn)
@@ -33,8 +26,15 @@ bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 
      int currentRow = this->getRow();
 
+
+
      if(std::abs(diffRow) == 2 && (currentRow != 2 && currentRow != 7))
         return 0;
 
      return 1;
+}
+
+bool Pawn::isValidMove(int diffRow, int diffColumn)
+{
+    return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
 }

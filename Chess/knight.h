@@ -23,10 +23,11 @@ class Knight : public Piece
         Knight(int row, int column);
 
         void makeMove(int diffRow, int diffColumn);
+        bool isValidMove(int diffRow, int diffColumn);
 
     private:
 
-        bool isJump(int diffRow, int diffColumn);
+        bool isMoveLegal(int diffRow, int diffColumn);
 
         const std::vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
                                            {2, -1}, {2, 1}, {-1, 2}, {-2, -1}

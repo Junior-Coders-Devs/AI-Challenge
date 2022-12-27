@@ -6,14 +6,14 @@ Bishop::Bishop(int row, int column): Piece(row, column) {}
  @inheritdoc
 */
 void Bishop::makeMove(int diffRow, int diffColumn){
-    if(!isValidMove(diffRow,diffColumn))
-        return;
 
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
+
 }
 
-bool Bishop::isValidMove(int diffRow, int diffColumn){
+bool Bishop::isValidMove(int diffRow, int diffColumn)
+{
     return Piece::isValidMove(diffRow, diffColumn) && isMoveLegal(diffRow, diffColumn);
 }
 

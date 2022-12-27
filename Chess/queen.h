@@ -7,9 +7,9 @@ class Queen: public Piece{
     public:
         Queen(int row, int column);
         void makeMove(int diffRow, int diffColumn);
+        bool isValidMove(int diffRow, int diffColumn);
 
     private:
-        bool isValidMove(int diffRow, int diffColumn);
         bool isMoveLegal(int diffRow, int diffColumn);
 };
 
