@@ -2,7 +2,8 @@
 
 MoveBy::MoveBy()
 {
-    moves.clear();
+    diffRow=0;
+    diffColumn=0;
 }
 
 
