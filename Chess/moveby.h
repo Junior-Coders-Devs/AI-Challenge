@@ -3,7 +3,14 @@
 class MoveBy
 {
     public:
-        Moveby();
+        MoveBy();
+
+        void setDiffRow(int diffRow);
+        int getDiffRow() const;
+
+        void setDiffColumn(int diffColumn);
+        int getDiffColumn() const;
+
     private:
         int diffRow;
         int diffColumn;
