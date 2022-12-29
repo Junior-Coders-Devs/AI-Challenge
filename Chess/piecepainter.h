@@ -10,7 +10,7 @@ class PiecePainter
 {
     public:
         PiecePainter();
-        void paintPiece(int column, int row, PieceType BISHOP, Color pieceColor);
+        void paintPiece(int column, int row, PieceType pieceType, Color pieceColor);
 
     private:
         Color getColorForCell(int row, int column);

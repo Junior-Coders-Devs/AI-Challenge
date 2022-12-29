@@ -18,10 +18,14 @@ class Board {
     public:
         Board();
         void init();
+        std::vector<Piece*> getPieces(Color color);
+        Piece* getPieceForPosition(int row, int column);
+
+    private:
+
         void initByColor(Color color);
         void initMapPieces();
-        std::vector<Piece*> getPieces(Color color);
-    private:
+
         Painter painter;
         std::map<Color, std::vector<Piece*>> pieces;
 };

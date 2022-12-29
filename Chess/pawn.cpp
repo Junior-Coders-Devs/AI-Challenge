@@ -1,6 +1,6 @@
 #include "pawn.h"
 
-Pawn::Pawn(int row, int column) : Piece(row, column) {}
+Pawn::Pawn(int row, int column, Color color) : Piece(row, column, color) {}
 
 
 /**
@@ -37,4 +37,8 @@ bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 bool Pawn::isValidMove(int diffRow, int diffColumn)
 {
     return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
+}
+
+PieceType Pawn::getType() {
+    return PAWN;
 }

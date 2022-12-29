@@ -1,6 +1,6 @@
 #include "rook.h"
 
-Rook::Rook(int row, int column):Piece(row, column){}
+Rook::Rook(int row, int column, Color color):Piece(row, column, color){}
 
 /**
  @inheritdoc
@@ -22,4 +22,8 @@ bool Rook::isMoveLegal(int diffRow, int diffColumn)
 bool Rook::isValidMove(int diffRow, int diffColumn)
 {
     return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
+}
+
+PieceType Rook::getType() {
+    return ROOK;
 }

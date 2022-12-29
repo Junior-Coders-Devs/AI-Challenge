@@ -1,6 +1,6 @@
 #include "king.h"
 
-King::King(int row, int column):Piece(row,column) {}
+King::King(int row, int column, Color color):Piece(row,column, color) {}
 
 /**
  @inheritdoc
@@ -25,4 +25,8 @@ bool King::isMoveLegal(int diffRow, int diffColumn)
 bool King::isValidMove(int diffRow, int diffColumn)
 {
     return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
+}
+
+PieceType King::getType() {
+    return KING;
 }

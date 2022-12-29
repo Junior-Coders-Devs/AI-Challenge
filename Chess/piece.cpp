@@ -1,9 +1,10 @@
 #include "piece.h"
 
 
-Piece::Piece(int row, int column) {
+Piece::Piece(int row, int column, Color color) {
     this->row = row;
     this->column = column;
+    this->color = color;
 }
 
 /**
@@ -44,3 +45,13 @@ void Piece::setColumn(int column) {
 int Piece::getColumn() const {
     return column;
 }
+
+void Piece::setColor(Color color) {
+    this->color = color;
+}
+
+Color Piece::getColor() const {
+    return color;
+}
+
+PieceType Piece::getType() {}

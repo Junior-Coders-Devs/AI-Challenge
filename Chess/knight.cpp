@@ -1,7 +1,7 @@
 #include "knight.h"
 
 
-Knight::Knight(int row, int column) : Piece(row, column) {}
+Knight::Knight(int row, int column, Color color) : Piece(row, column, color) {}
 
 /**
  @inheritdoc
@@ -30,4 +30,8 @@ bool Knight::isMoveLegal(int diffRow, int diffColumn)
 bool Knight::isValidMove(int diffRow, int diffColumn)
 {
     return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
+}
+
+PieceType Knight::getType() {
+    return KNIGHT;
 }

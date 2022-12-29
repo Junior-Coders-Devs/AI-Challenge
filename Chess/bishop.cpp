@@ -1,6 +1,6 @@
 #include "bishop.h"
 
-Bishop::Bishop(int row, int column): Piece(row, column) {}
+Bishop::Bishop(int row, int column, Color color): Piece(row, column, color) {}
 
 /**
  @inheritdoc
@@ -30,4 +30,8 @@ bool Bishop::isMoveLegal(int diffRow, int diffColumn)
     ok = ok && (diffRow != 0 || diffColumn != 0);
 
     return ok;
+}
+
+PieceType Bishop::getType() {
+    return BISHOP;
 }

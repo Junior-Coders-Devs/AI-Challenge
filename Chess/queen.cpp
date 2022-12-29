@@ -1,6 +1,6 @@
 #include "queen.h"
 
-Queen::Queen(int row, int column): Piece(row, column) {}
+Queen::Queen(int row, int column, Color color): Piece(row, column, color) {}
 
 /**
  * @inheritdoc
@@ -33,4 +33,8 @@ bool Queen::isMoveLegal(int diffRow, int diffColumn){
 
     return ok;
 
+}
+
+PieceType Queen::getType() {
+    return QUEEN;
 }

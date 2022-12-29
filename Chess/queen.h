@@ -5,9 +5,10 @@
 
 class Queen: public Piece{
     public:
-        Queen(int row, int column);
+        Queen(int row, int column, Color color);
         void makeMove(int diffRow, int diffColumn);
         bool isValidMove(int diffRow, int diffColumn);
+        PieceType getType();
 
     private:
         bool isMoveLegal(int diffRow, int diffColumn);
