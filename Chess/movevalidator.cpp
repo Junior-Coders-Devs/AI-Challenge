@@ -7,7 +7,7 @@ MoveValidator::MoveValidator(){}
 bool MoveValidator::checkMove(int diffRow, int diffCol, int row, int column)
 {
     const std::vector<std::pair<int,int>> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
-                                           {2, -1}, {2, 1}, {-1, 2}, {-2, -1}};
+                                                   {2, -1}, {2, 1}, {-1, 2}, {-2, -1}};
 
     bool isHorse = false;
 
@@ -32,7 +32,7 @@ bool MoveValidator::checkMove(int diffRow, int diffCol, int row, int column)
         column += moveY;
         diffRow--, diffCol--;
 
-        int type = checkCell(row, column);
+        int type = validateCell(row, column);
 
         if(type == 1)
             return 0;
@@ -48,7 +48,7 @@ bool MoveValidator::checkMove(int diffRow, int diffCol, int row, int column)
     return 1;
 }
 
-int MoveValidator::checkCell(int row, int column)
+int MoveValidator::validateCell(int row, int column)
 {
     Color oppositeColor;
 

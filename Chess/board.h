@@ -20,6 +20,7 @@ class Board {
         void init();
         std::vector<Piece*> getPieces(Color color);
         Piece* getPieceForPosition(int row, int column);
+        void deletePiece(int row, int column, Color color);
 
     private:
 
@@ -27,7 +28,7 @@ class Board {
         void initMapPieces();
 
         Painter painter;
-        std::map<Color, std::vector<Piece*>> pieces;
+        std::map<Color, std::vector<Piece*>>pieces;
 };
 
 #endif // H_BOARD

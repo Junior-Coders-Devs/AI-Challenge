@@ -12,18 +12,7 @@ int main()
 
     Board board;
 
-
     board.init();
-
-    /*while(true) {
-
-        if(ismouseclick(WM_LBUTTONDOWN))
-        {
-            int x, y;
-            getmouseclick(WM_LBUTTONDOWN, x, y);
-            cout << x << ' ' << y << endl;
-        }
-    }*/
 
     HumanPlayer hp(_WHITE, board);
 
@@ -39,6 +28,7 @@ int main()
        else {
             cout << "Nu am reusit :(" << endl;
        }
+
     }
 
 

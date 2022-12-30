@@ -63,4 +63,9 @@ enum PieceType {
     KING
 };
 
+struct position
+{
+    int row;
+    int column;
+};
 #endif // H_CONFIG

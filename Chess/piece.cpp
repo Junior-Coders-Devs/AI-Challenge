@@ -18,6 +18,10 @@ void Piece::makeMove(int diffRow, int diffColumn) {
     // To be implemented by every type of piece
 }
 
+std::vector<position> Piece::getValidPositions() {
+    // To be implemented by every type of piece
+}
+
 bool Piece::isValidMove(int diffRow, int diffColumn){
 
     bool ok = true;
