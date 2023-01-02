@@ -57,6 +57,8 @@ bool MoveValidator::isPathGood(int diffRow, int diffCol, int row, int column, in
     {
         MoveValidator::makeMove(row, column, moveX, moveY);
 
+        diffRow--, diffCol--;
+
         int type = validateCell(row, column);
 
         if(type == 1)
@@ -69,7 +71,7 @@ bool MoveValidator::isPathGood(int diffRow, int diffCol, int row, int column, in
             else
                 return 0;
         }
-        diffRow--, diffCol--;
+
     }
 
     return 1;
