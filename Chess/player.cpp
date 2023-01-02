@@ -19,7 +19,6 @@ bool Player::makeMove(Board &board) {
             piece->makeMove(diffRow, diffCol);
             piecePainter.paintPiece(piece->getRow(), piece->getColumn(), piece->getType(), piece->getColor());
 
-            /// TODO: In Painter sa facem o metoda de drawEmptySquare pentru o culoare data
             int lineIndex = piece->getRow() - diffRow;
             int columnIndex = piece->getColumn() - diffCol;
 

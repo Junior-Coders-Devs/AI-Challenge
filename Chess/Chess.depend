@@ -5,7 +5,7 @@
 	"board.h"
 	"humanplayer.h"
 
-1672424642 d:\documents\ai challenge\ai-challenge\chess\board.h
+1672697481 d:\documents\ai challenge\ai-challenge\chess\board.h
 	<vector>
 	<map>
 	"painter.h"
@@ -49,7 +49,7 @@
 1672426440 d:\documents\ai challenge\ai-challenge\chess\bishop.h
 	"piece.h"
 
-1672426921 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
 	"king.h"
 	"movevalidator.h"
 
@@ -84,14 +84,14 @@
 1672339365 source:d:\documents\ai challenge\ai-challenge\chess\piecepathloader.cpp
 	"piecepathloader.h"
 
-1672426763 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
 	"queen.h"
 	"movevalidator.h"
 
 1672426440 d:\documents\ai challenge\ai-challenge\chess\queen.h
 	"piece.h"
 
-1672424642 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
+1672697490 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
 	"board.h"
 
 1672339365 source:d:\documents\ai challenge\ai-challenge\chess\checkvalidator.cpp
@@ -104,20 +104,20 @@
 1672417430 d:\documents\ai challenge\ai-challenge\chess\humanplayer.h
 	"player.h"
 
-1672426527 d:\documents\ai challenge\ai-challenge\chess\player.h
+1672697769 d:\documents\ai challenge\ai-challenge\chess\player.h
 	"board.h"
 	"movevalidator.h"
 
-1672417519 d:\documents\ai challenge\ai-challenge\chess\movevalidator.h
+1672698527 d:\documents\ai challenge\ai-challenge\chess\movevalidator.h
 	"board.h"
 
-1672423909 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
+1672697539 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
 	"humanplayer.h"
 	<iostream>
 
 1672417519 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
 	"movevalidator.h"
 
-1672425074 source:d:\documents\ai challenge\ai-challenge\chess\player.cpp
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\player.cpp
 	"player.h"
 

@@ -26,7 +26,7 @@ class Board {
 
         void initByColor(Color color);
         void initMapPieces();
-
+        int getPieceIndex(int row, int column, std::vector<Piece*> pieces);
         Painter painter;
         std::map<Color, std::vector<Piece*>>pieces;
 };

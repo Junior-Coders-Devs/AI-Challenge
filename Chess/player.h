@@ -11,8 +11,10 @@ public:
     Player(Color color, Board board);
 
     bool makeMove(Board &board);
-    virtual bool getMove(Board board, Piece*& piece, int &diffRow, int &diffCol);
+
 protected:
+
+    virtual bool getMove(Board board, Piece*& piece, int &diffRow, int &diffCol);
 
     int convertCoordinateX(int coord);
     int convertCoordinateY(int coord);

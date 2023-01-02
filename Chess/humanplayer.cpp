@@ -41,10 +41,10 @@ bool HumanPlayer::getMove(Board board, Piece* &piece, int &diffRow, int &diffCol
     diffRow = enemyPiece.row - humanPiece.row;
     diffCol = enemyPiece.column - humanPiece.column;
 
-    Piece * EnemyPiece = board.getPieceForPosition(enemyPiece.row, enemyPiece.column);
+    Piece * _enemyPiece = board.getPieceForPosition(enemyPiece.row, enemyPiece.column);
 
 
-    if(EnemyPiece != NULL && EnemyPiece->getColor() == piece->getColor())
+    if(_enemyPiece != NULL && _enemyPiece->getColor() == piece->getColor())
         return 0;
 
     return 1;

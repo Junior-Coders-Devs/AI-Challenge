@@ -24,16 +24,16 @@ std::vector<position> Queen::getValidPositions()
     int pieceRow = row;
     int pieceColumn = column;
 
-    for(int i = 1; i <= 8; ++i)
+    for(int targetRow = 1; targetRow <= 8; ++targetRow)
     {
-        for(int j = 1; j <= 8; ++j)
+        for(int targetColumn = 1; targetColumn <= 8; ++targetColumn)
         {
-            bool pieceMove = Queen::isValidMove(i - pieceRow, j - pieceColumn);
+            bool pieceMove = Queen::isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
             if(pieceMove)
             {
-                bool ok = moveValidator.checkMove(i - pieceRow, j - pieceColumn, pieceRow, pieceColumn);
+                bool ok = moveValidator.checkMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
                 if(ok)
-                    validMoves.push_back({i - pieceRow, i - pieceColumn});
+                    validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
             }
         }
     }

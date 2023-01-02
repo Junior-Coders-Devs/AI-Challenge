@@ -104,12 +104,23 @@ void Board::deletePiece(int row, int column, Color color)
 {
     std::vector<Piece*> _pieces = getPieces(color);
 
+    int pieceIndex = Board::getPieceIndex(row, column, _pieces);
+
+    if(pieceIndex != -1)
+    {
+        _pieces.erase(_pieces.begin() + pieceIndex);
+        pieces[color] = _pieces;
+    }
+}
+
+int Board::getPieceIndex(int row, int column, std::vector<Piece*> pieces)
+{
     int cnt = 0;
     bool ok = 0;
 
-    for(auto pieceIndex : _pieces)
+    for(auto piece : pieces)
     {
-        if(pieceIndex->getRow() == row && pieceIndex->getColumn() == column)
+        if(piece->getRow() == row && piece->getColumn() == column)
         {
             ok = 1;
             break;
@@ -117,9 +128,8 @@ void Board::deletePiece(int row, int column, Color color)
         cnt++;
     }
 
-    if(ok)
-    {
-        _pieces.erase(_pieces.begin() + cnt);
-        pieces[color] = _pieces;
-    }
+    if(!ok)
+        return -1;
+
+    return cnt;
 }
