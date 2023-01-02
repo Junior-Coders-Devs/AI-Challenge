@@ -16,14 +16,9 @@ void Painter::initializeBoard()
     {
         for(int columnIndex = 1; columnIndex <= 8; columnIndex++)
         {
-            char background[PATH_SIZE];
+            Color color = piecePainter.getColorForCell(lineIndex, columnIndex);
 
-            if((lineIndex + columnIndex) % 2 == 0)
-                strcpy(background, EMPTY_BLACK_CELL);
-            else
-                strcpy(background, EMPTY_WHITE_CELL);
-
-            drawEmptySquare(lineIndex, columnIndex, background);
+            drawEmptySquare(lineIndex, columnIndex, color);
         }
     }
 }
@@ -66,8 +61,15 @@ void Painter::initializeWhitePieces()
     }
 }
 
-void Painter::drawEmptySquare(int row, int column, char image[])
+void Painter::drawEmptySquare(int row, int column, Color color)
 {
+    char image[PATH_SIZE];
+
+    if(color == _WHITE)
+        strcpy(image, EMPTY_WHITE_CELL);
+    else
+        strcpy(image, EMPTY_BLACK_CELL);
+
     int diffCol = (column - 1) * SQUARE_SIZE;
     int diffLin = (8 - row) * SQUARE_SIZE;
 

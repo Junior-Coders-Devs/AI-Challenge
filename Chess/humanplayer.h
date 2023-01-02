@@ -7,9 +7,7 @@ class HumanPlayer : public Player
 {
     public:
         HumanPlayer(Color color, Board board);
-        void getMove(Board board);
-        void getMove(Board board, Piece* &piece, int &diffRow, int &diffCol);
-        bool isValidMove(position humanPiece, position enemyPiece, Board board, Color color);
+        bool getMove(Board board, Piece* &piece, int &diffRow, int &diffCol);
 
     private:
         void waitForClick(int kind, int &row, int &column);

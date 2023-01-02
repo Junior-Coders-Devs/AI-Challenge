@@ -10,22 +10,14 @@ class Player
 public:
     Player(Color color, Board board);
 
-    struct position
-    {
-        int row;
-        int column;
-    };
-
-    bool makeMove(Board board);
-    virtual void getMove(Board board);
-    virtual void getMove(Board board, Piece*& piece, int &diffRow, int &diffCol);
+    bool makeMove(Board &board);
 
 protected:
+
+    virtual bool getMove(Board board, Piece*& piece, int &diffRow, int &diffCol);
+
     int convertCoordinateX(int coord);
     int convertCoordinateY(int coord);
-
-    bool checkForPieceOfColor(int row, int column, Board board, Color color);
-    bool checkForPieceOfOppositeColor(int row, int column, Board board, Color color);
 
     Color color;
     MoveValidator moveValidator;

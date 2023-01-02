@@ -1,10 +1,13 @@
 # depslib dependency file v1.0
-1671812015 source:d:\documents\ai challenge\ai-challenge\chess\main.cpp
+1672426111 source:d:\documents\ai challenge\ai-challenge\chess\main.cpp
 	<iostream>
 	<cassert>
 	"board.h"
+	"humanplayer.h"
 
-1671811555 d:\documents\ai challenge\ai-challenge\chess\board.h
+1672697481 d:\documents\ai challenge\ai-challenge\chess\board.h
+	<vector>
+	<map>
 	"painter.h"
 	"piece.h"
 	"rook.h"
@@ -14,13 +17,11 @@
 	"pawn.h"
 	"knight.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\painter.h
+1672424653 d:\documents\ai challenge\ai-challenge\chess\painter.h
 	"piecepainter.h"
 
-1671807824 d:\documents\ai challenge\ai-challenge\chess\piecepainter.h
+1672424985 d:\documents\ai challenge\ai-challenge\chess\piecepainter.h
 	<string.h>
-	<vector>
-	<map>
 	"graphics.h"
 	"piecepathloader.h"
 	"config.h"
@@ -28,67 +29,95 @@
 1671640362 d:\documents\ai challenge\ai-challenge\chess\piecepathloader.h
 	"config.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\config.h
+1672425902 d:\documents\ai challenge\ai-challenge\chess\config.h
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\rook.cpp
+1672426791 source:d:\documents\ai challenge\ai-challenge\chess\rook.cpp
 	"rook.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\rook.h
+1672426440 d:\documents\ai challenge\ai-challenge\chess\rook.h
 	"piece.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\piece.h
+1672426775 d:\documents\ai challenge\ai-challenge\chess\piece.h
+	"config.h"
+	<vector>
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\bishop.cpp
+1672426821 source:d:\documents\ai challenge\ai-challenge\chess\bishop.cpp
 	"bishop.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\bishop.h
+1672426440 d:\documents\ai challenge\ai-challenge\chess\bishop.h
 	"piece.h"
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
 	"king.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\king.h
+1672426914 d:\documents\ai challenge\ai-challenge\chess\king.h
 	"piece.h"
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\knight.cpp
+1672426821 source:d:\documents\ai challenge\ai-challenge\chess\knight.cpp
 	"knight.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\knight.h
+1672426440 d:\documents\ai challenge\ai-challenge\chess\knight.h
 	"piece.h"
 	<vector>
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\painter.cpp
+1672424969 source:d:\documents\ai challenge\ai-challenge\chess\painter.cpp
 	"painter.h"
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\pawn.cpp
+1672426821 source:d:\documents\ai challenge\ai-challenge\chess\pawn.cpp
 	"pawn.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\pawn.h
+1672426440 d:\documents\ai challenge\ai-challenge\chess\pawn.h
 	"piece.h"
 	<cmath>
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\piece.cpp
+1672425503 source:d:\documents\ai challenge\ai-challenge\chess\piece.cpp
 	"piece.h"
 
-1671643800 source:d:\documents\ai challenge\ai-challenge\chess\piecepainter.cpp
+1672391725 source:d:\documents\ai challenge\ai-challenge\chess\piecepainter.cpp
 	"piecepainter.h"
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\piecepathloader.cpp
+1672339365 source:d:\documents\ai challenge\ai-challenge\chess\piecepathloader.cpp
 	"piecepathloader.h"
 
-1671640362 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
 	"queen.h"
+	"movevalidator.h"
 
-1671640362 d:\documents\ai challenge\ai-challenge\chess\queen.h
+1672426440 d:\documents\ai challenge\ai-challenge\chess\queen.h
 	"piece.h"
 
-1671812008 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
+1672697490 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
 	"board.h"
 
-1671809142 source:d:\documents\ai challenge\ai-challenge\chess\checkvalidator.cpp
+1672339365 source:d:\documents\ai challenge\ai-challenge\chess\checkvalidator.cpp
 	"checkvalidator.h"
 
-1671808804 d:\documents\ai challenge\ai-challenge\chess\checkvalidator.h
+1672339365 d:\documents\ai challenge\ai-challenge\chess\checkvalidator.h
 	"board.h"
 	"config.h"
+
+1672417430 d:\documents\ai challenge\ai-challenge\chess\humanplayer.h
+	"player.h"
+
+1672697769 d:\documents\ai challenge\ai-challenge\chess\player.h
+	"board.h"
+	"movevalidator.h"
+
+1672698527 d:\documents\ai challenge\ai-challenge\chess\movevalidator.h
+	"board.h"
+
+1672697539 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
+	"humanplayer.h"
+	<iostream>
+
+1672698563 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
+	"movevalidator.h"
+
+1672697769 source:d:\documents\ai challenge\ai-challenge\chess\player.cpp
+	"player.h"
 

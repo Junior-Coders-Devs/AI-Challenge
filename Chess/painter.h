@@ -11,7 +11,7 @@ class Painter {
         void initializeWindow();
         void initializeBoard();
         void initializePieces();
-        void drawEmptySquare(int row, int column, char image[]);
+        void drawEmptySquare(int row, int column, Color color);
 
     private:
         void initializeWhitePieces();

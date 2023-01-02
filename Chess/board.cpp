@@ -1,5 +1,6 @@
 #include "board.h"
 
+
 Board::Board() {}
 
 void Board::init()
@@ -10,19 +11,24 @@ void Board::init()
     painter.initializePieces();
 }
 
+
 std::vector<Piece*> Board::getPieces(Color color)
 {
     return pieces[color];
 }
 
-Piece* Board::getPieceForPosition(int row, int column) {
+Piece* Board::getPieceForPosition(int row, int column)
+{
 
-    for(auto mapEntry: pieces) {
+    for(auto mapEntry: pieces)
+    {
 
         Color color = mapEntry.first;
-        for(auto piece: pieces[color]) {
+        for(auto piece: pieces[color])
+        {
 
-            if(piece->getRow() == row && piece->getColumn() == column) {
+            if(piece->getRow() == row && piece->getColumn() == column)
+            {
 
                 return piece;
             }
@@ -50,19 +56,22 @@ void Board::initByColor(Color color)
     {
         switch(i)
         {
-        case 1:case 8:
+        case 1:
+        case 8:
         {
             Rook * rook = new Rook(firstRow, i, color);
             pieces[color].push_back(rook);
             break;
         }
-        case 2:case 7:
+        case 2:
+        case 7:
         {
             Knight * knight = new Knight(firstRow, i, color);
             pieces[color].push_back(knight);
             break;
         }
-        case 3:case 6:
+        case 3:
+        case 6:
         {
             Bishop * bishop = new Bishop(firstRow, i, color);
             pieces[color].push_back(bishop);
@@ -89,4 +98,38 @@ void Board::initByColor(Color color)
         Pawn * pawn = new Pawn(secondRow, i, color);
         pieces[color].push_back(pawn);
     }
+}
+
+void Board::deletePiece(int row, int column, Color color)
+{
+    std::vector<Piece*> _pieces = getPieces(color);
+
+    int pieceIndex = Board::getPieceIndex(row, column, _pieces);
+
+    if(pieceIndex != -1)
+    {
+        _pieces.erase(_pieces.begin() + pieceIndex);
+        pieces[color] = _pieces;
+    }
+}
+
+int Board::getPieceIndex(int row, int column, std::vector<Piece*> pieces)
+{
+    int cnt = 0;
+    bool ok = 0;
+
+    for(auto piece : pieces)
+    {
+        if(piece->getRow() == row && piece->getColumn() == column)
+        {
+            ok = 1;
+            break;
+        }
+        cnt++;
+    }
+
+    if(!ok)
+        return -1;
+
+    return cnt;
 }

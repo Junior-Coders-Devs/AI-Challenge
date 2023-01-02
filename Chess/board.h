@@ -20,14 +20,15 @@ class Board {
         void init();
         std::vector<Piece*> getPieces(Color color);
         Piece* getPieceForPosition(int row, int column);
+        void deletePiece(int row, int column, Color color);
 
     private:
 
         void initByColor(Color color);
         void initMapPieces();
-
+        int getPieceIndex(int row, int column, std::vector<Piece*> pieces);
         Painter painter;
-        std::map<Color, std::vector<Piece*>> pieces;
+        std::map<Color, std::vector<Piece*>>pieces;
 };
 
 #endif // H_BOARD

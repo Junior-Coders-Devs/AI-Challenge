@@ -9,6 +9,7 @@ class Queen: public Piece{
         void makeMove(int diffRow, int diffColumn);
         bool isValidMove(int diffRow, int diffColumn);
         PieceType getType();
+        std::vector<position> getValidPositions();
 
     private:
         bool isMoveLegal(int diffRow, int diffColumn);

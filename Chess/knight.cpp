@@ -1,5 +1,5 @@
 #include "knight.h"
-
+#include "movevalidator.h"
 
 Knight::Knight(int row, int column, Color color) : Piece(row, column, color) {}
 

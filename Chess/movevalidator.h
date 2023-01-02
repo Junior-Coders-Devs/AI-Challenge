@@ -13,9 +13,11 @@ public:
     void setColor(Color color);
 
 private:
-    int checkCell(int row, int column);
+    int validateCell(int row, int column);
     bool checkForColor(Board board, Color color, int row, int column);
-
+    bool isHorseMoved(int diffRow, int diffCol);
+    bool isPathGood(int diffRow, int diffCol, int row, int column, int moveX, int moveY);
+    void makeMove(int &row, int &column, int moveX, int moveY);
     Board board;
     Color color;
 
