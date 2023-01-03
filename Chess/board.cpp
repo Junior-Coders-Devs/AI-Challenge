@@ -1,5 +1,5 @@
 #include "board.h"
-
+#include <iostream>
 
 Board::Board() {}
 
@@ -103,6 +103,10 @@ void Board::initByColor(Color color)
 void Board::deletePiece(int row, int column, Color color)
 {
     std::vector<Piece*> _pieces = getPieces(color);
+
+    for(auto piece : _pieces)
+        std::cout << piece->getRow() << ' ' << piece->getColumn() << '\n';
+    std::cout << '\n';
 
     int pieceIndex = Board::getPieceIndex(row, column, _pieces);
 

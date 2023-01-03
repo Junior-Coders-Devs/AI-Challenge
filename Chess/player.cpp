@@ -4,6 +4,9 @@ bool Player::getMove(Board board, Piece*& piece, int &diffRow, int &diffCol) {}
 
 bool Player::makeMove(Board &board) {
 
+
+    moveValidator.setBoard(board);
+
     Piece* piece;
     int diffRow = -1, diffCol = -1;
 
