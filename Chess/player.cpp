@@ -17,6 +17,9 @@ bool Player::makeMove(Board &board) {
 
         if(moveValidator.checkMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
 
+
+            Color pieceColor = board.getColorForCell(piece->getRow(), piece->getColumn());
+
             std::cout << "MUT PIESA: " << piece->getType() << ' ' << color << '\n';
             std::cout << "POZITIA ACTUALA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
             piece->makeMove(diffRow, diffCol);
@@ -28,13 +31,12 @@ bool Player::makeMove(Board &board) {
             int columnIndex = piece->getColumn() - diffCol;
 
             Color color = piecePainter.getColorForCell(lineIndex, columnIndex);
-
             painter.drawEmptySquare(lineIndex, columnIndex, color);
 
-            Color oppositeColor;
-            if(color == _WHITE) oppositeColor = _BLACK;
+            Color oppositeColor = pieceColor;
+            if(pieceColor == _WHITE) oppositeColor = _BLACK;
             else oppositeColor = _WHITE;
-
+            std::cout << oppositeColor << '\n';
             std::cout << "STERG PIESA DE PE POZITIA " << piece->getRow() << ' ' << piece->getColumn() << '\n';
             board.deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
 

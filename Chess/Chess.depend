@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1672426111 source:d:\documents\ai challenge\ai-challenge\chess\main.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\main.cpp
 	<iostream>
 	<cassert>
 	"board.h"
 	"humanplayer.h"
 
-1672697481 d:\documents\ai challenge\ai-challenge\chess\board.h
+1672769578 d:\documents\ai challenge\ai-challenge\chess\board.h
 	<vector>
 	<map>
 	"painter.h"
@@ -29,7 +29,7 @@
 1671640362 d:\documents\ai challenge\ai-challenge\chess\piecepathloader.h
 	"config.h"
 
-1672425902 d:\documents\ai challenge\ai-challenge\chess\config.h
+1672770076 d:\documents\ai challenge\ai-challenge\chess\config.h
 
 1672426791 source:d:\documents\ai challenge\ai-challenge\chess\rook.cpp
 	"rook.h"
@@ -49,7 +49,7 @@
 1672426440 d:\documents\ai challenge\ai-challenge\chess\bishop.h
 	"piece.h"
 
-1672697769 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\king.cpp
 	"king.h"
 	"movevalidator.h"
 
@@ -84,15 +84,16 @@
 1672339365 source:d:\documents\ai challenge\ai-challenge\chess\piecepathloader.cpp
 	"piecepathloader.h"
 
-1672697769 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\queen.cpp
 	"queen.h"
 	"movevalidator.h"
 
 1672426440 d:\documents\ai challenge\ai-challenge\chess\queen.h
 	"piece.h"
 
-1672697490 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
+1672769566 source:d:\documents\ai challenge\ai-challenge\chess\board.cpp
 	"board.h"
+	<iostream>
 
 1672339365 source:d:\documents\ai challenge\ai-challenge\chess\checkvalidator.cpp
 	"checkvalidator.h"
@@ -101,23 +102,24 @@
 	"board.h"
 	"config.h"
 
-1672417430 d:\documents\ai challenge\ai-challenge\chess\humanplayer.h
+1672767799 d:\documents\ai challenge\ai-challenge\chess\humanplayer.h
 	"player.h"
 
-1672697769 d:\documents\ai challenge\ai-challenge\chess\player.h
+1672767799 d:\documents\ai challenge\ai-challenge\chess\player.h
 	"board.h"
 	"movevalidator.h"
 
-1672698527 d:\documents\ai challenge\ai-challenge\chess\movevalidator.h
+1672767799 d:\documents\ai challenge\ai-challenge\chess\movevalidator.h
 	"board.h"
 
-1672697539 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
 	"humanplayer.h"
 	<iostream>
 
-1672698563 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
 	"movevalidator.h"
 
-1672697769 source:d:\documents\ai challenge\ai-challenge\chess\player.cpp
+1672767799 source:d:\documents\ai challenge\ai-challenge\chess\player.cpp
 	"player.h"
+	<iostream>
 

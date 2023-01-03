@@ -51,7 +51,8 @@ const char EMPTY_WHITE_CELL[] = "Backgrounds/White.jpg";
 
 enum Color {
     _WHITE,
-    _BLACK
+    _BLACK,
+    _UNDEFINED
 };
 
 enum PieceType {

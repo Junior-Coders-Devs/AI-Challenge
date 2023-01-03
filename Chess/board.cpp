@@ -105,6 +105,12 @@ void Board::deletePiece(int row, int column, Color color)
 {
     int pieceIndex = Board::getPieceIndex(row, column, pieces[color]);
 
+    for(auto i : pieces[color])
+    {
+        std::cout << i->getRow() << ' ' << i->getColumn() << '\n';
+    }
+    std::cout << '\n';
+
     if(pieceIndex != -1)
     {
         std::cout << "AM STERS PIESA: " << pieces[color][pieceIndex]->getType() << ' ' << color << '\n';
@@ -123,4 +129,23 @@ int Board::getPieceIndex(int row, int column, std::vector<Piece*> &pieces)
     }
 
     return -1;
+}
+
+Color Board::getColorForCell(int row, int column)
+{
+    for(auto mapEntry: pieces)
+    {
+
+        Color color = mapEntry.first;
+        for(auto piece: pieces[color])
+        {
+
+            if(piece->getRow() == row && piece->getColumn() == column)
+            {
+                return color;
+            }
+        }
+    }
+
+    return _UNDEFINED;
 }

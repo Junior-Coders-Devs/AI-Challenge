@@ -21,7 +21,7 @@ class Board {
         std::vector<Piece*>& getPieces(Color color);
         Piece* getPieceForPosition(int row, int column);
         void deletePiece(int row, int column, Color color);
-
+        Color getColorForCell(int row, int column);
     private:
 
         void initByColor(Color color);
