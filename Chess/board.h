@@ -18,7 +18,7 @@ class Board {
     public:
         Board();
         void init();
-        std::vector<Piece*> getPieces(Color color);
+        std::vector<Piece*>& getPieces(Color color);
         Piece* getPieceForPosition(int row, int column);
         void deletePiece(int row, int column, Color color);
 
@@ -26,7 +26,7 @@ class Board {
 
         void initByColor(Color color);
         void initMapPieces();
-        int getPieceIndex(int row, int column, std::vector<Piece*> pieces);
+        int getPieceIndex(int row, int column, std::vector<Piece*> &pieces);
         Painter painter;
         std::map<Color, std::vector<Piece*>>pieces;
 };

@@ -14,7 +14,7 @@ int main()
 
     board.init();
 
-    HumanPlayer hp(_WHITE, board);
+    HumanPlayer hp(_WHITE, &board);
 
     /// Aici va fi de fapt inlocuit de un Game.cpp
     while(true) {

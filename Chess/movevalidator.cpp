@@ -4,7 +4,7 @@
 MoveValidator::MoveValidator() {}
 
 
-void MoveValidator::setBoard(Board board)
+void MoveValidator::setBoard(Board *board)
 {
     this->board = board;
 }
@@ -93,8 +93,8 @@ int MoveValidator::validateCell(int row, int column)
         oppositeColor = _BLACK;
     else oppositeColor = _WHITE;
 
-    bool myColor = checkForColor(board, color, row, column);
-    bool diffColor = checkForColor(board, oppositeColor, row, column);
+    bool myColor = checkForColor(color, row, column);
+    bool diffColor = checkForColor(oppositeColor, row, column);
 
     if(myColor)
         return 1;
@@ -105,9 +105,9 @@ int MoveValidator::validateCell(int row, int column)
     return -1;
 }
 
-bool MoveValidator::checkForColor(Board board, Color color, int row, int column)
+bool MoveValidator::checkForColor(Color color, int row, int column)
 {
-    std::vector<Piece*> pieces = board.getPieces(color);
+    std::vector<Piece*> pieces = board->getPieces(color);
     for(int i = 0; i < pieces.size(); ++i)
     {
         int boardRow = pieces[i]->getRow();

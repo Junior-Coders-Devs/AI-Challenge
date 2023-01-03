@@ -8,13 +8,13 @@
 class Player
 {
 public:
-    Player(Color color, Board board);
+    Player(Color color, Board *board);
 
     bool makeMove(Board &board);
 
 protected:
 
-    virtual bool getMove(Board board, Piece*& piece, int &diffRow, int &diffCol);
+    virtual bool getMove(Board &board, Piece*& piece, int &diffRow, int &diffCol);
 
     int convertCoordinateX(int coord);
     int convertCoordinateY(int coord);

@@ -3,10 +3,10 @@
 
 
 
-HumanPlayer::HumanPlayer(Color color, Board board) : Player(color, board) {}
+HumanPlayer::HumanPlayer(Color color, Board *board) : Player(color, board) {}
 
 
-bool HumanPlayer::getMove(Board board, Piece* &piece, int &diffRow, int &diffCol)
+bool HumanPlayer::getMove(Board &board, Piece* &piece, int &diffRow, int &diffCol)
 {
 
     int row = -1, column = -1;
@@ -26,7 +26,7 @@ bool HumanPlayer::getMove(Board board, Piece* &piece, int &diffRow, int &diffCol
     if(piece == NULL)
         return 0;
 
-    if(piece->getColor() == _BLACK)
+    if(piece->getColor() != color)
         return 0;
 
 

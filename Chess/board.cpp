@@ -1,5 +1,6 @@
 #include "board.h"
 
+#include <iostream>
 
 Board::Board() {}
 
@@ -12,7 +13,7 @@ void Board::init()
 }
 
 
-std::vector<Piece*> Board::getPieces(Color color)
+std::vector<Piece*>& Board::getPieces(Color color)
 {
     return pieces[color];
 }
@@ -102,34 +103,24 @@ void Board::initByColor(Color color)
 
 void Board::deletePiece(int row, int column, Color color)
 {
-    std::vector<Piece*> _pieces = getPieces(color);
-
-    int pieceIndex = Board::getPieceIndex(row, column, _pieces);
+    int pieceIndex = Board::getPieceIndex(row, column, pieces[color]);
 
     if(pieceIndex != -1)
     {
-        _pieces.erase(_pieces.begin() + pieceIndex);
-        pieces[color] = _pieces;
+        std::cout << "AM STERS PIESA: " << pieces[color][pieceIndex]->getType() << ' ' << color << '\n';
+        pieces[color].erase(pieces[color].begin() + pieceIndex);
     }
 }
 
-int Board::getPieceIndex(int row, int column, std::vector<Piece*> pieces)
+int Board::getPieceIndex(int row, int column, std::vector<Piece*> &pieces)
 {
-    int cnt = 0;
-    bool ok = 0;
-
-    for(auto piece : pieces)
+    for(int index = 0; index < pieces.size(); index++)
     {
-        if(piece->getRow() == row && piece->getColumn() == column)
+        if(pieces[index]->getRow() == row && pieces[index]->getColumn() == column)
         {
-            ok = 1;
-            break;
+            return index;
         }
-        cnt++;
     }
 
-    if(!ok)
-        return -1;
-
-    return cnt;
+    return -1;
 }
