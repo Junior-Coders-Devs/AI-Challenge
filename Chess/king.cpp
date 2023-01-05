@@ -30,7 +30,7 @@ std::vector<position> King::getValidPositions()
             bool pieceMove = King::isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
             if(pieceMove)
             {
-                bool ok = moveValidator.checkMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
                 if(ok)
                     validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
             }

@@ -8,7 +8,7 @@ class MoveValidator
 public:
     MoveValidator();
 
-    bool checkMove(int diffRow, int diffCol, int row, int column);
+    bool validateMove(int diffRow, int diffCol, int row, int column);
     void setColor(Color color);
 
 private:
@@ -16,7 +16,6 @@ private:
     bool checkForColor(Color color, int row, int column);
     bool isHorseMoved(int diffRow, int diffCol);
     bool isPathGood(int diffRow, int diffCol, int row, int column, int moveX, int moveY);
-    void makeMove(int &row, int &column, int moveX, int moveY);
     Color color;
 
 };

@@ -24,7 +24,7 @@ bool Player::makeMove() {
 
     if(piece->isValidMove(diffRow, diffCol)) {
 
-        if(moveValidator.checkMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
+        if(moveValidator.validateMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
 
             Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 

@@ -2,23 +2,14 @@
 #define H_KNIGHT
 
 #include "piece.h"
+#include "moveby.h"
 #include <vector>
 
 class Knight : public Piece
 {
     public:
 
-        struct MoveBy
-        {
-            int rowDiff;
-            int columnDiff;
-
-            bool operator == (MoveBy & a) const
-            {
-                return (a.rowDiff == rowDiff && a.columnDiff == columnDiff);
-            }
-
-        };
+        static const std::vector<MoveBy> moves;
 
         Knight(int row, int column, Color color);
 
@@ -28,11 +19,9 @@ class Knight : public Piece
 
     private:
 
-        bool isMoveLegal(int diffRow, int diffColumn);
+        static const std::vector<MoveBy> initMoves();
 
-        const std::vector<MoveBy> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
-                                           {2, -1}, {2, 1}, {-1, 2}, {-2, -1}
-        };
+        bool isMoveLegal(int diffRow, int diffColumn);
 };
 
 

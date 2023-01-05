@@ -10,18 +10,14 @@ void MoveValidator::setColor(Color color)
 }
 
 
-bool MoveValidator::checkMove(int diffRow, int diffCol, int row, int column)
+bool MoveValidator::validateMove(int diffRow, int diffCol, int row, int column)
 {
-    bool isHorse = MoveValidator::isHorseMoved(diffRow, diffCol);
-
-    if(isHorse)
+    if(isHorseMoved(diffRow, diffCol))
         return true;
 
     int moveX = 0, moveY = 0;
-    if(diffRow)
-        moveX = diffRow / std::abs(diffRow);
-    if(diffCol)
-        moveY = diffCol / std::abs(diffCol);
+    if(diffRow) moveX = diffRow / std::abs(diffRow);
+    if(diffCol) moveY = diffCol / std::abs(diffCol);
 
     diffRow = std::abs(diffRow), diffCol = std::abs(diffCol);
 
@@ -33,14 +29,10 @@ bool MoveValidator::checkMove(int diffRow, int diffCol, int row, int column)
 
 bool MoveValidator::isHorseMoved(int diffRow, int diffCol)
 {
-    const std::vector<std::pair<int,int>> moves = {{1, 2}, {1, -2}, {-1, -2}, {-2, 1},
-        {2, -1}, {2, 1}, {-1, 2}, {-2, -1}
-    };
-
     bool isHorse = false;
 
-    for(auto j : moves)
-        isHorse |= (diffCol == j.second && diffRow == j.first);
+    for(auto j : Knight::moves)
+        isHorse |= (diffCol == j.getDiffColumn() && diffRow == j.getDiffRow());
 
     return isHorse;
 }
@@ -50,16 +42,17 @@ bool MoveValidator::isPathGood(int diffRow, int diffCol, int row, int column, in
 {
     while(diffRow > 0 || diffCol > 0)
     {
-        makeMove(row, column, moveX, moveY);
+        row += moveX;
+        column += moveY;
 
         diffRow--, diffCol--;
 
-        int type = validateCell(row, column);
+        int result = validateCell(row, column);
 
-        if(type == 1)
+        if(result == 1)
             return 0;
 
-        if(type == 0)
+        if(result == 0)
         {
             if(std::max(diffRow, 0) + std::max(diffCol, 0) == 0)
                 return 1;
@@ -70,13 +63,6 @@ bool MoveValidator::isPathGood(int diffRow, int diffCol, int row, int column, in
     }
 
     return 1;
-}
-
-
-void MoveValidator::makeMove(int &row, int &column, int moveX, int moveY)
-{
-    row += moveX;
-    column += moveY;
 }
 
 
@@ -91,11 +77,8 @@ int MoveValidator::validateCell(int row, int column)
     bool myColor = checkForColor(color, row, column);
     bool diffColor = checkForColor(oppositeColor, row, column);
 
-    if(myColor)
-        return 1;
-
-    if(diffColor)
-        return 0;
+    if(myColor) return 1;
+    if(diffColor) return 0;
 
     return -1;
 }
@@ -103,13 +86,10 @@ int MoveValidator::validateCell(int row, int column)
 bool MoveValidator::checkForColor(Color color, int row, int column)
 {
     Board* board = Board::getInstance();
-    std::vector<Piece*> pieces = board->getPieces(color);
-    for(unsigned int index = 0; index < pieces.size(); ++index)
-    {
-        int boardRow = pieces[index]->getRow();
-        int boardColumn = pieces[index]->getColumn();
-        if(boardRow == row && boardColumn == column)
-            return true;
-    }
-    return false;
+    Piece* pieceOnPosition = board->getPieceForPosition(row, column);
+
+    if(pieceOnPosition == NULL)
+        return false;
+
+    return pieceOnPosition->getColor() == color;
 }

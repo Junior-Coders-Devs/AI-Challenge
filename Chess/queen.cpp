@@ -31,7 +31,7 @@ std::vector<position> Queen::getValidPositions()
             bool pieceMove = Queen::isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
             if(pieceMove)
             {
-                bool ok = moveValidator.checkMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
                 if(ok)
                     validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
             }
