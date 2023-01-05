@@ -14,12 +14,12 @@ int main()
 
     board->init();
 
-    HumanPlayer hp(_WHITE);
+    Player*  hp = new HumanPlayer(_WHITE);
 
     /// Aici va fi de fapt inlocuit de un Game.cpp
     while(true) {
 
-       bool couldMove = hp.makeMove();
+       bool couldMove = hp->makeMove();
        if(couldMove) {
 
 #ifdef DEBUG_LOGS
@@ -34,7 +34,6 @@ int main()
        }
 
     }
-
 
     getch();
 

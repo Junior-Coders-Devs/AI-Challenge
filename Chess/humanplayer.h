@@ -7,10 +7,12 @@ class HumanPlayer : public Player
 {
     public:
         HumanPlayer(Color color);
-        bool getMove(Piece* &piece, int &diffRow, int &diffCol);
+        bool getMove(Piece* &piece, int &diffRow, int &diffCol) override;
 
     private:
-        void waitForClick(int kind, int &row, int &column);
+        position waitForClick();
+        int convertCoordinateX(int coord);
+        int convertCoordinateY(int coord);
 };
 
 

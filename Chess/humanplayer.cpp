@@ -1,61 +1,60 @@
 #include "humanplayer.h"
-#include <iostream>
 
 
-
-HumanPlayer::HumanPlayer(Color color) : Player(color) {}
+HumanPlayer::HumanPlayer(Color playerColor) : Player(playerColor) {}
 
 
 bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 {
-
     Board* board = Board::getInstance();
 
-    int row = -1, column = -1;
-    int kind = WM_LBUTTONDOWN;
+    position humanPosition = waitForClick();
 
-    waitForClick(kind, row, column);
-
-
-    position humanPiece =
-    {
-        convertCoordinateX(column),
-        convertCoordinateY(row)
-    };
-
-    piece = board->getPieceForPosition(humanPiece.row, humanPiece.column);
+    piece = board->getPieceForPosition(humanPosition.row, humanPosition.column);
 
     if(piece == NULL)
         return 0;
 
-    if(piece->getColor() != color)
+    if(piece->getColor() != playerColor)
         return 0;
 
+    position targetPosition = waitForClick();
 
-    waitForClick(kind, row, column);
+    diffRow = targetPosition.row - humanPosition.row;
+    diffCol = targetPosition.column - humanPosition.column;
 
-    position enemyPiece =
-    {
-        convertCoordinateX(column),
-        convertCoordinateY(row)
-    };
+    Piece * enemyPiece = board->getPieceForPosition(targetPosition.row, targetPosition.column);
 
-    diffRow = enemyPiece.row - humanPiece.row;
-    diffCol = enemyPiece.column - humanPiece.column;
-
-    Piece * _enemyPiece = board->getPieceForPosition(enemyPiece.row, enemyPiece.column);
-
-
-    if(_enemyPiece != NULL && _enemyPiece->getColor() == piece->getColor())
+    if(enemyPiece != NULL && enemyPiece->getColor() == piece->getColor())
         return 0;
 
     return 1;
 }
 
 
-void HumanPlayer::waitForClick(int kind, int &row, int &column)
+position HumanPlayer::waitForClick()
 {
+    int kind = WM_LBUTTONDOWN;
+    int row = -1, column = -1;
 
     while(!ismouseclick(kind));
     getmouseclick(kind, row, column);
+
+    position pos =
+    {
+        convertCoordinateX(column),
+        convertCoordinateY(row)
+    };
+
+    return pos;
+}
+
+int HumanPlayer::convertCoordinateX(int coord)
+{
+    return 9 - ((coord - 30) / SQUARE_SIZE);
+}
+
+int HumanPlayer::convertCoordinateY(int coord)
+{
+    return (coord - 30) / SQUARE_SIZE;
 }

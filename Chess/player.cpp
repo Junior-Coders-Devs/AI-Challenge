@@ -3,6 +3,12 @@
 #include <iostream>
 #endif // DEBUG_LOGS
 
+Player::Player(Color playerColor)
+{
+    this->playerColor = playerColor;
+    moveValidator.setColor(playerColor);
+}
+
 bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
 
 bool Player::makeMove() {
@@ -20,7 +26,6 @@ bool Player::makeMove() {
 
         if(moveValidator.checkMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
 
-
             Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 
 #ifdef DEBUG_LOGS
@@ -32,14 +37,15 @@ bool Player::makeMove() {
 
 #ifdef DEBUG_LOGS
             std::cout << "POZITIA NOUA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
-#endif
+#endif // DEBUG_LOGS
+
             piecePainter.paintPiece(piece->getRow(), piece->getColumn(), piece->getType(), piece->getColor());
 
             int lineIndex = piece->getRow() - diffRow;
             int columnIndex = piece->getColumn() - diffCol;
 
-            Color color = piecePainter.getColorForCell(lineIndex, columnIndex);
-            painter.drawEmptySquare(lineIndex, columnIndex, color);
+            Color cellColor = piecePainter.getColorForCell(lineIndex, columnIndex);
+            painter.drawEmptySquare(lineIndex, columnIndex, cellColor);
 
             Color oppositeColor = pieceColor;
             if(pieceColor == _WHITE) oppositeColor = _BLACK;
@@ -57,20 +63,4 @@ bool Player::makeMove() {
     }
 
     return false;
-}
-
-Player::Player(Color color)
-{
-    this->color = color;
-    moveValidator.setColor(color);
-}
-
-int Player::convertCoordinateX(int coord)
-{
-    return 9 - ((coord - 30) / SQUARE_SIZE);
-}
-
-int Player::convertCoordinateY(int coord)
-{
-    return (coord - 30) / SQUARE_SIZE;
 }
