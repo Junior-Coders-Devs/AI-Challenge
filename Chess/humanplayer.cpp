@@ -3,11 +3,13 @@
 
 
 
-HumanPlayer::HumanPlayer(Color color, Board *board) : Player(color, board) {}
+HumanPlayer::HumanPlayer(Color color) : Player(color) {}
 
 
-bool HumanPlayer::getMove(Board &board, Piece* &piece, int &diffRow, int &diffCol)
+bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 {
+
+    Board* board = Board::getInstance();
 
     int row = -1, column = -1;
     int kind = WM_LBUTTONDOWN;
@@ -21,7 +23,7 @@ bool HumanPlayer::getMove(Board &board, Piece* &piece, int &diffRow, int &diffCo
         convertCoordinateY(row)
     };
 
-    piece = board.getPieceForPosition(humanPiece.row, humanPiece.column);
+    piece = board->getPieceForPosition(humanPiece.row, humanPiece.column);
 
     if(piece == NULL)
         return 0;
@@ -41,7 +43,7 @@ bool HumanPlayer::getMove(Board &board, Piece* &piece, int &diffRow, int &diffCo
     diffRow = enemyPiece.row - humanPiece.row;
     diffCol = enemyPiece.column - humanPiece.column;
 
-    Piece * _enemyPiece = board.getPieceForPosition(enemyPiece.row, enemyPiece.column);
+    Piece * _enemyPiece = board->getPieceForPosition(enemyPiece.row, enemyPiece.column);
 
 
     if(_enemyPiece != NULL && _enemyPiece->getColor() == piece->getColor())

@@ -1,8 +1,21 @@
 #include "board.h"
 
+#ifdef DEBUG_LOGS
 #include <iostream>
+#endif // DEBUG_LOGS
+
+Board* Board::instance = NULL;
 
 Board::Board() {}
+
+Board* Board::getInstance() {
+
+    if(instance == NULL) {
+        instance = new Board;
+    }
+
+    return instance;
+}
 
 void Board::init()
 {
@@ -105,22 +118,26 @@ void Board::deletePiece(int row, int column, Color color)
 {
     int pieceIndex = Board::getPieceIndex(row, column, pieces[color]);
 
+#ifdef DEBUG_LOGS
     for(auto i : pieces[color])
     {
         std::cout << i->getRow() << ' ' << i->getColumn() << '\n';
     }
     std::cout << '\n';
+#endif // DEBUG_LOGS
 
     if(pieceIndex != -1)
     {
+#ifdef DEBUG_LOGS
         std::cout << "AM STERS PIESA: " << pieces[color][pieceIndex]->getType() << ' ' << color << '\n';
+#endif // DEBUG_LOGS
         pieces[color].erase(pieces[color].begin() + pieceIndex);
     }
 }
 
 int Board::getPieceIndex(int row, int column, std::vector<Piece*> &pieces)
 {
-    for(int index = 0; index < pieces.size(); index++)
+    for(unsigned int index = 0; index < pieces.size(); index++)
     {
         if(pieces[index]->getRow() == row && pieces[index]->getColumn() == column)
         {

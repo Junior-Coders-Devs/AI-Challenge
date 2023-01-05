@@ -3,16 +3,12 @@
 
 CheckValidator::CheckValidator(){};
 
-void CheckValidator::isCheck(Board board, Color player)
+void CheckValidator::isCheck(Color player)
 {
-    /*
-        Spor
-    */
+    /// TODO
 }
 
-void CheckValidator::isCheckMate(Board board, Color playerToMove)
+void CheckValidator::isCheckMate(Color playerToMove)
 {
-    /*
-        Spor
-    */
+    /// TODO
 }

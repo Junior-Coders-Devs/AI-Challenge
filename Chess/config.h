@@ -1,6 +1,8 @@
 #ifndef H_CONFIG
 #define H_CONFIG
 
+/// Uncomment below define to enable logs
+// #define DEBUG_LOGS
 
 const int WINDOW_HEIGHT = 760;
 const int WINDOW_WIDTH = 760;

@@ -8,8 +8,8 @@ class CheckValidator
 {
 public:
     CheckValidator();
-    void isCheck(Board board, Color player);
-    void isCheckMate(Board board, Color playerToMove);
+    void isCheck(Color player);
+    void isCheckMate(Color playerToMove);
 };
 
 

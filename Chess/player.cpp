@@ -1,14 +1,17 @@
 #include "player.h"
+#ifdef DEBUG_LOGS
 #include <iostream>
+#endif // DEBUG_LOGS
 
-bool Player::getMove(Board &board, Piece*& piece, int &diffRow, int &diffCol) {}
+bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
 
-bool Player::makeMove(Board &board) {
+bool Player::makeMove() {
 
+    Board* board = Board::getInstance();
     Piece* piece;
     int diffRow = -1, diffCol = -1;
 
-    bool ok = getMove(board, piece, diffRow, diffCol);
+    bool ok = getMove(piece, diffRow, diffCol);
 
     if(!ok)
         return false;
@@ -18,13 +21,18 @@ bool Player::makeMove(Board &board) {
         if(moveValidator.checkMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
 
 
-            Color pieceColor = board.getColorForCell(piece->getRow(), piece->getColumn());
+            Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 
+#ifdef DEBUG_LOGS
             std::cout << "MUT PIESA: " << piece->getType() << ' ' << color << '\n';
             std::cout << "POZITIA ACTUALA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
-            piece->makeMove(diffRow, diffCol);
-            std::cout << "POZITIA NOUA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
+#endif // DEBUG_LOGS
 
+            piece->makeMove(diffRow, diffCol);
+
+#ifdef DEBUG_LOGS
+            std::cout << "POZITIA NOUA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
+#endif
             piecePainter.paintPiece(piece->getRow(), piece->getColumn(), piece->getType(), piece->getColor());
 
             int lineIndex = piece->getRow() - diffRow;
@@ -36,9 +44,13 @@ bool Player::makeMove(Board &board) {
             Color oppositeColor = pieceColor;
             if(pieceColor == _WHITE) oppositeColor = _BLACK;
             else oppositeColor = _WHITE;
+
+#ifdef DEBUG_LOGS
             std::cout << oppositeColor << '\n';
             std::cout << "STERG PIESA DE PE POZITIA " << piece->getRow() << ' ' << piece->getColumn() << '\n';
-            board.deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
+#endif // DEBUG_LOGS
+
+            board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
 
             return true;
         }
@@ -47,10 +59,9 @@ bool Player::makeMove(Board &board) {
     return false;
 }
 
-Player::Player(Color color, Board *board)
+Player::Player(Color color)
 {
     this->color = color;
-    moveValidator.setBoard(board);
     moveValidator.setColor(color);
 }
 

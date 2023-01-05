@@ -10,23 +10,27 @@ int main()
 {
 
 
-    Board board;
+    Board* board = Board::getInstance();
 
-    board.init();
+    board->init();
 
-    HumanPlayer hp(_WHITE, &board);
+    HumanPlayer hp(_WHITE);
 
     /// Aici va fi de fapt inlocuit de un Game.cpp
     while(true) {
 
-       bool couldMove = hp.makeMove(board);
+       bool couldMove = hp.makeMove();
        if(couldMove) {
 
+#ifdef DEBUG_LOGS
             cout << "AM REUSIT!!" << endl;
+#endif // DEFINE_LOGS
             /// Aici ar fi logica de schimbat jucatorul care e la mutare
        }
        else {
+#ifdef DEBUG_LOGS
             cout << "Nu am reusit :(" << endl;
+#endif // DEBUG_LOGS
        }
 
     }

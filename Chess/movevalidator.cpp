@@ -1,13 +1,8 @@
 #include "movevalidator.h"
+#include "board.h"
 
 
 MoveValidator::MoveValidator() {}
-
-
-void MoveValidator::setBoard(Board *board)
-{
-    this->board = board;
-}
 
 void MoveValidator::setColor(Color color)
 {
@@ -55,7 +50,7 @@ bool MoveValidator::isPathGood(int diffRow, int diffCol, int row, int column, in
 {
     while(diffRow > 0 || diffCol > 0)
     {
-        MoveValidator::makeMove(row, column, moveX, moveY);
+        makeMove(row, column, moveX, moveY);
 
         diffRow--, diffCol--;
 
@@ -107,11 +102,12 @@ int MoveValidator::validateCell(int row, int column)
 
 bool MoveValidator::checkForColor(Color color, int row, int column)
 {
+    Board* board = Board::getInstance();
     std::vector<Piece*> pieces = board->getPieces(color);
-    for(int i = 0; i < pieces.size(); ++i)
+    for(unsigned int index = 0; index < pieces.size(); ++index)
     {
-        int boardRow = pieces[i]->getRow();
-        int boardColumn = pieces[i]->getColumn();
+        int boardRow = pieces[index]->getRow();
+        int boardColumn = pieces[index]->getColumn();
         if(boardRow == row && boardColumn == column)
             return true;
     }
