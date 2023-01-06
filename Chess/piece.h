@@ -2,6 +2,7 @@
 #define H_PIECE
 
 #include "config.h"
+#include "moveby.h"
 #include <vector>
 
 class Piece {
@@ -22,7 +23,7 @@ class Piece {
         virtual void makeMove(int diffRow, int diffColumn);
         virtual bool isValidMove(int diffRow, int diffColumn);
         virtual PieceType getType();
-        virtual std::vector<position> getValidPositions();
+        virtual std::vector<MoveBy> getValidPositions();
 
     protected:
         int row;

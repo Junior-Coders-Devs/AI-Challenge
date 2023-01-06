@@ -18,7 +18,7 @@ void Piece::makeMove(int diffRow, int diffColumn) {
     // To be implemented by every type of piece
 }
 
-std::vector<position> Piece::getValidPositions() {
+std::vector<MoveBy> Piece::getValidPositions() {
     // To be implemented by every type of piece
 }
 

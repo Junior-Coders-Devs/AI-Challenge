@@ -34,6 +34,33 @@ bool Bishop::isMoveLegal(int diffRow, int diffColumn)
     return ok;
 }
 
+std::vector<MoveBy> Bishop::getValidPositions()
+{
+    std::vector<MoveBy> validMoves;
+
+    MoveValidator moveValidator;
+
+    int pieceRow = row;
+    int pieceColumn = column;
+
+    for(int targetRow = 1; targetRow <= 8; ++targetRow)
+    {
+        for(int targetColumn = 1; targetColumn <= 8; ++targetColumn)
+        {
+            bool pieceMove = Bishop::isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
+            if(pieceMove)
+            {
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                if(ok)
+                    validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
+            }
+        }
+    }
+
+    return validMoves;
+}
+
+
 PieceType Bishop::getType() {
     return BISHOP;
 }

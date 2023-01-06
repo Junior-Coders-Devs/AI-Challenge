@@ -15,9 +15,9 @@ void Queen::makeMove(int diffRow, int diffColumn)
 }
 
 
-std::vector<position> Queen::getValidPositions()
+std::vector<MoveBy> Queen::getValidPositions()
 {
-    std::vector<position> validMoves;
+    std::vector<MoveBy> validMoves;
 
     MoveValidator moveValidator;
 

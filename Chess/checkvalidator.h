@@ -6,10 +6,10 @@
 
 class CheckValidator
 {
-public:
-    CheckValidator();
-    void isCheck(Color player);
-    void isCheckMate(Color playerToMove);
+    public:
+        CheckValidator();
+        void isCheck(Color player);
+        void isCheckMate(Color playerToMove);
 };
 
 

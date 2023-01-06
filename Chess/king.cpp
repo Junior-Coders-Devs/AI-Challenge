@@ -14,9 +14,9 @@ void King::makeMove(int diffRow, int diffColumn)
 
 }
 
-std::vector<position> King::getValidPositions()
+std::vector<MoveBy> King::getValidPositions()
 {
-    std::vector<position> validMoves;
+    std::vector<MoveBy> validMoves;
 
     MoveValidator moveValidator;
 
