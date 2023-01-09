@@ -5,9 +5,10 @@
 
 class Bishop: public Piece{
     public:
-        Bishop(int row, int column);
+        Bishop(int row, int column, Color color);
         void makeMove(int diffRow, int diffColumn);
-
+        PieceType getType();
+        std::vector<MoveBy> getValidPositions();
     private:
         bool isValidMove(int diffRow, int diffColumn);
         bool isMoveLegal(int diffRow, int diffColumn);

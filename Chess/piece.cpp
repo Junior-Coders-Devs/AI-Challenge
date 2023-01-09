@@ -1,8 +1,10 @@
 #include "piece.h"
 
-Piece::Piece(int row, int column) {
+
+Piece::Piece(int row, int column, Color color) {
     this->row = row;
     this->column = column;
+    this->color = color;
 }
 
 /**
@@ -16,7 +18,11 @@ void Piece::makeMove(int diffRow, int diffColumn) {
     // To be implemented by every type of piece
 }
 
-bool Piece::isValidMove(int diffRow, int diffColumn) const {
+std::vector<MoveBy> Piece::getValidPositions() {
+    // To be implemented by every type of piece
+}
+
+bool Piece::isValidMove(int diffRow, int diffColumn){
 
     bool ok = true;
 
@@ -43,3 +49,13 @@ void Piece::setColumn(int column) {
 int Piece::getColumn() const {
     return column;
 }
+
+void Piece::setColor(Color color) {
+    this->color = color;
+}
+
+Color Piece::getColor() const {
+    return color;
+}
+
+PieceType Piece::getType() {}

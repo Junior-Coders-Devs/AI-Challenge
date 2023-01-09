@@ -1,5 +1,5 @@
 #ifndef H_PIECEPAINTER
-#define H_PIECPAINTER
+#define H_PIECEPAINTER
 
 #include <string.h>
 #include "graphics.h"
@@ -10,10 +10,11 @@ class PiecePainter
 {
     public:
         PiecePainter();
-        void paintPiece(int column, int row, PieceType BISHOP, Color pieceColor);
+        void paintPiece(int column, int row, PieceType pieceType, Color pieceColor);
+        Color getColorForCell(int row, int column);
 
     private:
-        Color getColorForCell(int row, int column);
+
         void loadPiece(const char* image, int diffLin, int diffCol);
         PiecePathLoader piecePathLoader;
 };

@@ -11,11 +11,11 @@ class Painter {
         void initializeWindow();
         void initializeBoard();
         void initializePieces();
+        void drawEmptySquare(int row, int column, Color color);
 
     private:
         void initializeWhitePieces();
         void initializeBlackPieces();
-        void drawSquare(int row, int column, char image[]);
 
         PiecePainter piecePainter;
 };

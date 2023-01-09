@@ -1,6 +1,8 @@
 #ifndef H_CONFIG
 #define H_CONFIG
 
+/// Uncomment below define to enable logs
+// #define DEBUG_LOGS
 
 const int WINDOW_HEIGHT = 760;
 const int WINDOW_WIDTH = 760;
@@ -51,7 +53,8 @@ const char EMPTY_WHITE_CELL[] = "Backgrounds/White.jpg";
 
 enum Color {
     _WHITE,
-    _BLACK
+    _BLACK,
+    _UNDEFINED
 };
 
 enum PieceType {
@@ -63,4 +66,9 @@ enum PieceType {
     KING
 };
 
+struct position
+{
+    int row;
+    int column;
+};
 #endif // H_CONFIG

@@ -32,7 +32,39 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="bishop.cpp" />
+		<Unit filename="bishop.h" />
+		<Unit filename="board.cpp" />
+		<Unit filename="board.h" />
+		<Unit filename="checkvalidator.cpp" />
+		<Unit filename="checkvalidator.h" />
+		<Unit filename="config.h" />
+		<Unit filename="humanplayer.cpp" />
+		<Unit filename="humanplayer.h" />
+		<Unit filename="king.cpp" />
+		<Unit filename="king.h" />
+		<Unit filename="knight.cpp" />
+		<Unit filename="knight.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="moves.txt" />
+		<Unit filename="movevalidator.cpp" />
+		<Unit filename="movevalidator.h" />
+		<Unit filename="painter.cpp" />
+		<Unit filename="painter.h" />
+		<Unit filename="pawn.cpp" />
+		<Unit filename="pawn.h" />
+		<Unit filename="piece.cpp" />
+		<Unit filename="piece.h" />
+		<Unit filename="piecepainter.cpp" />
+		<Unit filename="piecepainter.h" />
+		<Unit filename="piecepathloader.cpp" />
+		<Unit filename="piecepathloader.h" />
+		<Unit filename="player.cpp" />
+		<Unit filename="player.h" />
+		<Unit filename="queen.cpp" />
+		<Unit filename="queen.h" />
+		<Unit filename="rook.cpp" />
+		<Unit filename="rook.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

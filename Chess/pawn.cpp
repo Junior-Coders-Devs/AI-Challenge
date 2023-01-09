@@ -1,6 +1,7 @@
 #include "pawn.h"
+#include "movevalidator.h"
 
-Pawn::Pawn(int row, int column) : Piece(row, column) {}
+Pawn::Pawn(int row, int column, Color color) : Piece(row, column, color) {}
 
 
 /**
@@ -8,23 +9,19 @@ Pawn::Pawn(int row, int column) : Piece(row, column) {}
 */
 void Pawn::makeMove(int diffRow, int diffColumn)
 {
-    bool ok = true;
-
-    ok &= this->isMoveLegal(diffRow, diffColumn);
-    ok &= this->isValidMove(diffRow, diffColumn);
-
-    if(!ok)
-        return;
-
     int currentRow = this->getRow();
     int currentColumn = this->getColumn();
 
     this->setRow(currentRow + diffRow);
     this->setColumn(currentColumn + diffColumn);
+
 }
 
 bool Pawn::isMoveLegal(int diffRow, int diffColumn)
 {
+     if(diffRow == 0 && diffColumn == 0)
+        return 0;
+
      if(std::abs(diffRow) > 2 || std::abs(diffColumn) > 1)
         return 0;
 
@@ -37,4 +34,13 @@ bool Pawn::isMoveLegal(int diffRow, int diffColumn)
         return 0;
 
      return 1;
+}
+
+bool Pawn::isValidMove(int diffRow, int diffColumn)
+{
+    return Piece::isValidMove(diffRow, diffColumn) && this->isMoveLegal(diffRow, diffColumn);
+}
+
+PieceType Pawn::getType() {
+    return PAWN;
 }
