@@ -10,7 +10,7 @@ class HumanPlayer : public Player
         bool getMove(Piece* &piece, int &diffRow, int &diffCol) override;
 
     private:
-        position waitForClick();
+        position getPositionClicked();
         int convertCoordinateX(int coord);
         int convertCoordinateY(int coord);
 };
