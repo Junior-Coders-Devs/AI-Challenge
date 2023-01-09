@@ -8,7 +8,7 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 {
     Board* board = Board::getInstance();
 
-    position humanPosition = waitForClick();
+    position humanPosition = getClick();
 
     piece = board->getPieceForPosition(humanPosition.row, humanPosition.column);
 
@@ -18,7 +18,7 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
     if(piece->getColor() != playerColor)
         return 0;
 
-    position targetPosition = waitForClick();
+    position targetPosition = getClick();
 
     diffRow = targetPosition.row - humanPosition.row;
     diffCol = targetPosition.column - humanPosition.column;
@@ -32,7 +32,7 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 }
 
 
-position HumanPlayer::waitForClick()
+position HumanPlayer::getClick()
 {
     int kind = WM_LBUTTONDOWN;
     int row = -1, column = -1;
