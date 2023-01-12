@@ -1,14 +1,13 @@
 #include "humanplayer.h"
 
-
 HumanPlayer::HumanPlayer(Color playerColor) : Player(playerColor) {}
 
 
 bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 {
-    Board* board = Board::getInstance();
+    Board * board = Board::getInstance();
 
-    position humanPosition = getClick();
+    position humanPosition = getPositionClicked();
 
     piece = board->getPieceForPosition(humanPosition.row, humanPosition.column);
 
@@ -18,7 +17,7 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
     if(piece->getColor() != playerColor)
         return 0;
 
-    position targetPosition = getClick();
+    position targetPosition = getPositionClicked();
 
     diffRow = targetPosition.row - humanPosition.row;
     diffCol = targetPosition.column - humanPosition.column;
@@ -32,7 +31,7 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 }
 
 
-position HumanPlayer::getClick()
+position HumanPlayer::getPositionClicked()
 {
     int kind = WM_LBUTTONDOWN;
     int row = -1, column = -1;

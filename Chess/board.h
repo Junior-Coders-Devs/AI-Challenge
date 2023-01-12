@@ -16,7 +16,7 @@
 class Board {
 
     public:
-
+        Board();
         static Board* getInstance();
         void init();
         std::vector<Piece*>& getPieces(Color color);
@@ -25,7 +25,7 @@ class Board {
         Color getColorForCell(int row, int column);
     private:
 
-        Board();
+
 
         void initByColor(Color color);
         void initMapPieces();
