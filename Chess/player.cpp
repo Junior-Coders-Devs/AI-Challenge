@@ -29,7 +29,7 @@ bool Player::makeMove() {
             Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 
 #ifdef DEBUG_LOGS
-            std::cout << "MUT PIESA: " << piece->getType() << ' ' << color << '\n';
+            std::cout << "MUT PIESA: " << piece->getType() << ' ' << pieceColor << '\n';
             std::cout << "POZITIA ACTUALA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
 #endif // DEBUG_LOGS
 
