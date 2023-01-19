@@ -23,7 +23,7 @@ class Piece {
         virtual void makeMove(int diffRow, int diffColumn);
         virtual bool isValidMove(int diffRow, int diffColumn);
         virtual PieceType getType();
-        virtual std::vector<MoveBy> getValidPositions();
+        std::vector<MoveBy> getValidPositions();
 
     protected:
         int row;
