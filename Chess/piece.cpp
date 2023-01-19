@@ -1,4 +1,5 @@
 #include "piece.h"
+#include "movevalidator.h"
 
 
 Piece::Piece(int row, int column, Color color) {
@@ -18,8 +19,30 @@ void Piece::makeMove(int diffRow, int diffColumn) {
     // To be implemented by every type of piece
 }
 
-std::vector<MoveBy> Piece::getValidPositions() {
-    // To be implemented by every type of piece
+std::vector<MoveBy> Piece::getValidPositions()
+{
+   std::vector<MoveBy> validMoves;
+
+    MoveValidator moveValidator;
+
+    int pieceRow = row;
+    int pieceColumn = column;
+
+    for(int targetRow = 1; targetRow <= 8; ++targetRow)
+    {
+        for(int targetColumn = 1; targetColumn <= 8; ++targetColumn)
+        {
+            bool pieceMove = this->isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
+            if(pieceMove)
+            {
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                if(ok)
+                    validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
+            }
+        }
+    }
+
+    return validMoves;
 }
 
 bool Piece::isValidMove(int diffRow, int diffColumn){
