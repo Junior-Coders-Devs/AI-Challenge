@@ -3,13 +3,13 @@
 
 #include "board.h"
 #include "movevalidator.h"
-
+#include "checkvalidator.h"
 
 class Player
 {
 public:
     Player(Color playerColor);
-
+    CheckValidator* CV = new CheckValidator();
     bool makeMove();
 
 protected:

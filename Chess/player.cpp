@@ -57,10 +57,10 @@ bool Player::makeMove() {
 #endif // DEBUG_LOGS
 
             board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
-
+            CV->isCheckMate(pieceColor);
+            CV->isCheck(pieceColor);
             return true;
         }
     }
-
     return false;
 }
