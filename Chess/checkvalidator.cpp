@@ -58,7 +58,10 @@ void CheckValidator::isCheckMate(Color playerToMove)
             break;
         }
     std::vector<MoveBy>validPositions=piece->getValidPositions();
-    int cnt=validPositions.size();
+    int cnt=validPositions.size() + 1;
+    if(isCheckPosition(piece->getRow(), piece->getColumn(), piece->getColor()))
+        cnt--;
+
     for(auto moves:validPositions)
     {
         int row=moves.getDiffRow()+piece->getRow();
