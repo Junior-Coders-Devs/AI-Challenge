@@ -9,7 +9,7 @@ class Player
 {
 public:
     Player(Color playerColor);
-    CheckValidator* CV = new CheckValidator();
+
     bool makeMove();
 
 protected:
@@ -20,6 +20,7 @@ protected:
     MoveValidator moveValidator;
     PiecePainter piecePainter;
     Painter painter;
+    CheckValidator* CV;
 };
 
 
