@@ -1,0 +1,143 @@
+# depslib dependency file v1.0
+1675973866 source:d:\projects\ai-challenge\chess\bishop.cpp
+	"bishop.h"
+	"movevalidator.h"
+
+1674151442 d:\projects\ai-challenge\chess\bishop.h
+	"piece.h"
+
+1675974380 d:\projects\ai-challenge\chess\piece.h
+	"config.h"
+	"moveby.h"
+	<vector>
+
+1674151442 d:\projects\ai-challenge\chess\config.h
+
+1674151442 d:\projects\ai-challenge\chess\moveby.h
+
+1675973866 d:\projects\ai-challenge\chess\movevalidator.h
+	"board.h"
+
+1675972800 d:\projects\ai-challenge\chess\board.h
+	<vector>
+	<map>
+	"painter.h"
+	"piece.h"
+	"rook.h"
+	"bishop.h"
+	"queen.h"
+	"king.h"
+	"pawn.h"
+	"knight.h"
+
+1674151442 d:\projects\ai-challenge\chess\painter.h
+	"piecepainter.h"
+
+1674151442 d:\projects\ai-challenge\chess\piecepainter.h
+	<string.h>
+	"graphics.h"
+	"piecepathloader.h"
+	"config.h"
+
+1671564468 d:\projects\ai-challenge\chess\piecepathloader.h
+	"config.h"
+
+1674151442 d:\projects\ai-challenge\chess\rook.h
+	"piece.h"
+
+1675974439 d:\projects\ai-challenge\chess\queen.h
+	"piece.h"
+
+1675974342 d:\projects\ai-challenge\chess\king.h
+	"piece.h"
+
+1674151442 d:\projects\ai-challenge\chess\pawn.h
+	"piece.h"
+	<cmath>
+
+1674151442 d:\projects\ai-challenge\chess\knight.h
+	"piece.h"
+	"moveby.h"
+	<vector>
+
+1674151442 source:d:\projects\ai-challenge\chess\board.cpp
+	"board.h"
+	<iostream>
+
+1675972792 source:d:\projects\ai-challenge\chess\checkvalidator.cpp
+	"checkvalidator.h"
+
+1675972792 d:\projects\ai-challenge\chess\checkvalidator.h
+	"board.h"
+	"config.h"
+
+1675973789 source:d:\projects\ai-challenge\chess\game.cpp
+	"game.h"
+	<iostream>
+
+1675973789 d:\projects\ai-challenge\chess\game.h
+	"humanplayer.h"
+	<vector>
+
+1674151578 d:\projects\ai-challenge\chess\humanplayer.h
+	"player.h"
+
+1675972792 d:\projects\ai-challenge\chess\player.h
+	"board.h"
+	"movevalidator.h"
+
+1675973789 source:d:\projects\ai-challenge\chess\humanplayer.cpp
+	"humanplayer.h"
+
+1675974391 source:d:\projects\ai-challenge\chess\king.cpp
+	"king.h"
+	"movevalidator.h"
+
+1675973866 source:d:\projects\ai-challenge\chess\knight.cpp
+	"knight.h"
+	"movevalidator.h"
+
+1675973789 source:d:\projects\ai-challenge\chess\main.cpp
+	<iostream>
+	<cassert>
+	"board.h"
+	"humanplayer.h"
+	"game.h"
+
+1674151442 source:d:\projects\ai-challenge\chess\moveby.cpp
+	"moveby.h"
+
+1675973866 source:d:\projects\ai-challenge\chess\movevalidator.cpp
+	"movevalidator.h"
+	"board.h"
+	<iostream>
+
+1674151442 source:d:\projects\ai-challenge\chess\painter.cpp
+	"painter.h"
+
+1675973866 source:d:\projects\ai-challenge\chess\pawn.cpp
+	"pawn.h"
+	"movevalidator.h"
+
+1675974378 source:d:\projects\ai-challenge\chess\piece.cpp
+	"piece.h"
+	"movevalidator.h"
+
+1674151442 source:d:\projects\ai-challenge\chess\piecepainter.cpp
+	"piecepainter.h"
+
+1674151437 source:d:\projects\ai-challenge\chess\piecepathloader.cpp
+	"piecepathloader.h"
+
+1675973866 source:d:\projects\ai-challenge\chess\player.cpp
+	"player.h"
+	<iostream>
+
+1675974430 source:d:\projects\ai-challenge\chess\queen.cpp
+	"queen.h"
+	"movevalidator.h"
+
+1675973866 source:d:\projects\ai-challenge\chess\rook.cpp
+	"rook.h"
+	"movevalidator.h"
+

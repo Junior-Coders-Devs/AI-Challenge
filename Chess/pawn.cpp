@@ -15,6 +15,11 @@ void Pawn::makeMove(int diffRow, int diffColumn)
     this->setRow(currentRow + diffRow);
     this->setColumn(currentColumn + diffColumn);
 
+    numberofMoves++;
+
+    int first = this->getFirstMoveTime();
+    if(first == 0)
+        this->setFirstMoveTime(numberofMoves);
 }
 
 bool Pawn::isMoveLegal(int diffRow, int diffColumn)

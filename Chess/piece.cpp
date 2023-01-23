@@ -35,7 +35,8 @@ std::vector<MoveBy> Piece::getValidPositions()
             bool pieceMove = this->isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
             if(pieceMove)
             {
-                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                bool enPassant = false;
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn, enPassant);
                 if(ok)
                     validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
             }
@@ -81,4 +82,21 @@ Color Piece::getColor() const {
     return color;
 }
 
+void Piece::setFirstMoveTime(int firstMoveTime)
+{
+    this->firstMoveTime = firstMoveTime;
+}
+
+int Piece::getFirstMoveTime()
+{
+    return firstMoveTime;
+}
+
+int Piece::getNumberOfMoves()
+{
+    return numberofMoves;
+}
+
 PieceType Piece::getType() {}
+
+int Piece::numberofMoves = 0;
