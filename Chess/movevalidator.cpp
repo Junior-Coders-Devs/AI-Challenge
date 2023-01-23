@@ -1,6 +1,6 @@
 #include "movevalidator.h"
 #include "board.h"
-
+#include <iostream>
 
 MoveValidator::MoveValidator() {}
 
@@ -10,10 +10,18 @@ void MoveValidator::setColor(Color color)
 }
 
 
-bool MoveValidator::validateMove(int diffRow, int diffCol, int row, int column)
+bool MoveValidator::validateMove(int diffRow, int diffCol, int row, int column, bool & enPassant)
 {
     if(isHorseMoved(diffRow, diffCol))
         return true;
+
+    if(isEnPassant(diffRow, diffCol, row, column)){
+        enPassant = true;
+        return true;
+    }
+
+    if(!validatePawn(diffRow, diffCol, row, column))
+        return false;
 
     int moveX = 0, moveY = 0;
     if(diffRow) moveX = diffRow / std::abs(diffRow);
@@ -92,4 +100,75 @@ bool MoveValidator::checkForColor(Color color, int row, int column)
         return false;
 
     return pieceOnPosition->getColor() == color;
+}
+
+bool MoveValidator::isEnPassant(int diffRow, int diffCol, int row, int column)
+{
+    Board* board = Board::getInstance();
+
+    Piece * piece = board->getPieceForPosition(row, column);
+    PieceType type = piece->getType();
+    Color color = piece->getColor();
+
+    if(type != PAWN)
+        return false;
+
+    if(diffCol == 0)
+        return false;
+
+    if((color == WHITE && row != 5) || (color == _BLACK && row != 4))
+        return false;
+
+    int numberOfMoves = piece->getNumberOfMoves();
+
+    Piece * enemyPiece = board->getPieceForPosition(row, column + diffCol);
+
+    if(enemyPiece == NULL)
+        return false;
+
+    PieceType enemyType = enemyPiece->getType();
+    Color enemyColor = enemyPiece->getColor();
+    int enemyPieceFirstMove = enemyPiece->getFirstMoveTime();
+
+    if(color == enemyColor)
+        return false;
+
+    if(enemyType != PAWN)
+        return false;
+
+    std::cout << enemyType << ' ' << enemyColor << ' ' << enemyPieceFirstMove << '\n';
+
+    if(numberOfMoves != enemyPieceFirstMove)
+        return false;
+
+    return true;
+}
+
+bool MoveValidator::validatePawn(int diffRow, int diffCol, int row, int column)
+{
+    Board* board = Board::getInstance();
+
+    Piece * piece = board->getPieceForPosition(row, column);
+    PieceType type = piece->getType();
+    Color color = piece->getColor();
+
+    if(type != PAWN)
+        return true;
+
+    if(color == _BLACK && diffRow > 0)
+        return false;
+
+    if(color == _WHITE && diffRow < 0)
+        return false;
+
+    if(diffRow && diffCol)
+    {
+        int newRow = row + diffRow;
+        int newColumn = column + diffCol;
+
+        Piece * enemyPiece = board->getPieceForPosition(newRow, newColumn);
+        if(enemyPiece == NULL)
+            return false;
+    }
+    return true;
 }

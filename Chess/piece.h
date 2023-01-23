@@ -20,6 +20,11 @@ class Piece {
         void setColor(Color color);
         Color getColor() const;
 
+        void setFirstMoveTime(int firstMoveTime);
+        int getFirstMoveTime();
+
+        int getNumberOfMoves();
+
         virtual void makeMove(int diffRow, int diffColumn);
         virtual bool isValidMove(int diffRow, int diffColumn);
         virtual PieceType getType();
@@ -28,6 +33,8 @@ class Piece {
     protected:
         int row;
         int column;
+        int firstMoveTime = 0;
+        static int numberofMoves;
         Color color;
 };
 

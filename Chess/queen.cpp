@@ -12,6 +12,11 @@ void Queen::makeMove(int diffRow, int diffColumn)
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
+
+    int first = this->getFirstMoveTime();
+    if(first == 0)
+        this->setFirstMoveTime(numberofMoves);
 }
 
 
@@ -31,7 +36,8 @@ std::vector<MoveBy> Queen::getValidPositions()
             bool pieceMove = Queen::isValidMove(targetRow - pieceRow, targetColumn - pieceColumn);
             if(pieceMove)
             {
-                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn);
+                bool enPassant = false;
+                bool ok = moveValidator.validateMove(targetRow - pieceRow, targetColumn - pieceColumn, pieceRow, pieceColumn, enPassant);
                 if(ok)
                     validMoves.push_back({targetRow - pieceRow, targetColumn - pieceColumn});
             }

@@ -58,4 +58,21 @@ Color Piece::getColor() const {
     return color;
 }
 
+void Piece::setFirstMoveTime(int firstMoveTime)
+{
+    this->firstMoveTime = firstMoveTime;
+}
+
+int Piece::getFirstMoveTime()
+{
+    return firstMoveTime;
+}
+
+int Piece::getNumberOfMoves()
+{
+    return numberofMoves;
+}
+
 PieceType Piece::getType() {}
+
+int Piece::numberofMoves = 0;

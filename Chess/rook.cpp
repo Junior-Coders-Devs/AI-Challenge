@@ -12,6 +12,11 @@ void Rook::makeMove(int diffRow, int diffColumn)
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
+
+    int first = this->getFirstMoveTime();
+    if(first == 0)
+        this->setFirstMoveTime(numberofMoves);
 }
 
 

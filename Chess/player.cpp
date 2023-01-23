@@ -11,7 +11,8 @@ Player::Player(Color playerColor)
 
 bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
 
-bool Player::makeMove() {
+bool Player::makeMove()
+{
 
     Board* board = Board::getInstance();
     Piece* piece;
@@ -22,9 +23,11 @@ bool Player::makeMove() {
     if(!ok)
         return false;
 
-    if(piece->isValidMove(diffRow, diffCol)) {
-
-        if(moveValidator.validateMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
+    if(piece->isValidMove(diffRow, diffCol))
+    {
+        bool enPassant = false;
+        if(moveValidator.validateMove(diffRow, diffCol, piece->getRow(), piece->getColumn(), enPassant))
+        {
 
             Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 
@@ -44,8 +47,18 @@ bool Player::makeMove() {
             int lineIndex = piece->getRow() - diffRow;
             int columnIndex = piece->getColumn() - diffCol;
 
+            if(enPassant)
+                columnIndex += diffCol;
+
             Color cellColor = piecePainter.getColorForCell(lineIndex, columnIndex);
             painter.drawEmptySquare(lineIndex, columnIndex, cellColor);
+
+            if(enPassant)
+            {
+                columnIndex -= diffCol;
+                cellColor = piecePainter.getColorForCell(lineIndex, columnIndex);
+                painter.drawEmptySquare(lineIndex, columnIndex, cellColor);
+            }
 
             Color oppositeColor = pieceColor;
             if(pieceColor == _WHITE) oppositeColor = _BLACK;
