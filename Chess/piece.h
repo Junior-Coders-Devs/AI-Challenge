@@ -4,11 +4,11 @@
 #include "config.h"
 #include "moveby.h"
 #include <vector>
-
+#include <string>
 class Piece {
 
     public:
-        Piece(int row, int column, Color color);
+        Piece(int row, int column, Color color, std::string shortName);
 
         void setRow(int row);
         int getRow() const;
@@ -23,12 +23,14 @@ class Piece {
         virtual void makeMove(int diffRow, int diffColumn);
         virtual bool isValidMove(int diffRow, int diffColumn);
         virtual PieceType getType();
+        std::string getShortName();
         std::vector<MoveBy> getValidPositions();
 
     protected:
         int row;
         int column;
         Color color;
+        std::string shortName;
 };
 
 #endif // H_PIECE

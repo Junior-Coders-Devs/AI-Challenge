@@ -9,16 +9,16 @@ Player::Player(Color playerColor)
     moveValidator.setColor(playerColor);
 }
 
-bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
+bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol, position &startPosition, bool &Taken) {}
 
 bool Player::makeMove() {
-
     Board* board = Board::getInstance();
     Piece* piece;
+    bool Taken=false;
+    History* history= History::getInstance();
     int diffRow = -1, diffCol = -1;
-
-    bool ok = getMove(piece, diffRow, diffCol);
-
+    position startPosition;
+    bool ok = getMove(piece, diffRow, diffCol, startPosition, Taken);
     if(!ok)
         return false;
 
@@ -34,6 +34,7 @@ bool Player::makeMove() {
 #endif // DEBUG_LOGS
 
             piece->makeMove(diffRow, diffCol);
+            history->addMove(piece, startPosition, Taken);
 
 #ifdef DEBUG_LOGS
             std::cout << "POZITIA NOUA: " << piece->getRow() << ' ' << piece->getColumn() << '\n';
@@ -57,7 +58,6 @@ bool Player::makeMove() {
 #endif // DEBUG_LOGS
 
             board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
-
             return true;
         }
     }

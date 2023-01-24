@@ -12,7 +12,7 @@ const std::vector<MoveBy> Knight::initMoves() {
     return knightMoves;
 }
 
-Knight::Knight(int row, int column, Color color) : Piece(row, column, color) {}
+Knight::Knight(int row, int column, Color color) : Piece(row, column, color, "N") {}
 
 /**
  @inheritdoc

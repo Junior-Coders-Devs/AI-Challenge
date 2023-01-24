@@ -2,10 +2,11 @@
 #include "movevalidator.h"
 
 
-Piece::Piece(int row, int column, Color color) {
+Piece::Piece(int row, int column, Color color, std::string shortName) {
     this->row = row;
     this->column = column;
     this->color = color;
+    this->shortName = shortName;
 }
 
 /**
@@ -79,6 +80,10 @@ void Piece::setColor(Color color) {
 
 Color Piece::getColor() const {
     return color;
+}
+
+std::string Piece::getShortName(){
+    return shortName;
 }
 
 PieceType Piece::getType() {}

@@ -1,7 +1,7 @@
 #include "rook.h"
 #include "movevalidator.h"
 
-Rook::Rook(int row, int column, Color color):Piece(row, column, color){}
+Rook::Rook(int row, int column, Color color):Piece(row, column, color, "R"){}
 
 /**
  @inheritdoc

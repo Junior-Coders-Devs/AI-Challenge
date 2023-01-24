@@ -123,26 +123,28 @@
 	"player.h"
 	<iostream>
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\bishop.cpp
+1674390289 source:c:\users\radu\documents\ai-challenge\chess\bishop.cpp
 	"bishop.h"
 	"movevalidator.h"
 
 1673352643 c:\users\radu\documents\ai-challenge\chess\bishop.h
 	"piece.h"
 
-1674151082 c:\users\radu\documents\ai-challenge\chess\piece.h
+1674390720 c:\users\radu\documents\ai-challenge\chess\piece.h
 	"config.h"
 	"moveby.h"
 	<vector>
+	<string>
 
-1673352643 c:\users\radu\documents\ai-challenge\chess\config.h
+1674572489 c:\users\radu\documents\ai-challenge\chess\config.h
+	<string>
 
 1673352643 c:\users\radu\documents\ai-challenge\chess\moveby.h
 
 1673352643 c:\users\radu\documents\ai-challenge\chess\movevalidator.h
 	"board.h"
 
-1673352643 c:\users\radu\documents\ai-challenge\chess\board.h
+1674572489 c:\users\radu\documents\ai-challenge\chess\board.h
 	<vector>
 	<map>
 	"painter.h"
@@ -184,7 +186,7 @@
 	"moveby.h"
 	<vector>
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\board.cpp
+1674392642 source:c:\users\radu\documents\ai-challenge\chess\board.cpp
 	"board.h"
 	<iostream>
 
@@ -195,36 +197,37 @@
 	"board.h"
 	"config.h"
 
-1674150512 source:c:\users\radu\documents\ai-challenge\chess\king.cpp
+1674390289 source:c:\users\radu\documents\ai-challenge\chess\king.cpp
 	"king.h"
-	"movevalidator.h"
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\knight.cpp
+1674390253 source:c:\users\radu\documents\ai-challenge\chess\knight.cpp
 	"knight.h"
 	"movevalidator.h"
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\main.cpp
+1674387991 source:c:\users\radu\documents\ai-challenge\chess\main.cpp
 	<iostream>
 	<cassert>
 	"board.h"
 	"humanplayer.h"
 
-1673352643 c:\users\radu\documents\ai-challenge\chess\humanplayer.h
+1674574526 c:\users\radu\documents\ai-challenge\chess\humanplayer.h
 	"player.h"
 
-1673352643 c:\users\radu\documents\ai-challenge\chess\player.h
+1674574526 c:\users\radu\documents\ai-challenge\chess\player.h
 	"board.h"
 	"movevalidator.h"
+	"history.h"
 
 1673352643 source:c:\users\radu\documents\ai-challenge\chess\painter.cpp
 	"painter.h"
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\pawn.cpp
+1674390289 source:c:\users\radu\documents\ai-challenge\chess\pawn.cpp
 	"pawn.h"
 	"movevalidator.h"
 
-1674150512 source:c:\users\radu\documents\ai-challenge\chess\piece.cpp
+1674390773 source:c:\users\radu\documents\ai-challenge\chess\piece.cpp
 	"piece.h"
+	"movevalidator.h"
 
 1673352643 source:c:\users\radu\documents\ai-challenge\chess\piecepainter.cpp
 	"piecepainter.h"
@@ -232,11 +235,10 @@
 1672235612 source:c:\users\radu\documents\ai-challenge\chess\piecepathloader.cpp
 	"piecepathloader.h"
 
-1674150512 source:c:\users\radu\documents\ai-challenge\chess\queen.cpp
+1674390289 source:c:\users\radu\documents\ai-challenge\chess\queen.cpp
 	"queen.h"
-	"movevalidator.h"
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\rook.cpp
+1674390289 source:c:\users\radu\documents\ai-challenge\chess\rook.cpp
 	"rook.h"
 	"movevalidator.h"
 
@@ -244,13 +246,23 @@
 	"movevalidator.h"
 	"board.h"
 
-1673352643 source:c:\users\radu\documents\ai-challenge\chess\player.cpp
+1674574601 source:c:\users\radu\documents\ai-challenge\chess\player.cpp
 	"player.h"
 	<iostream>
 
-1674150587 source:c:\users\radu\documents\ai-challenge\chess\humanplayer.cpp
+1674574687 source:c:\users\radu\documents\ai-challenge\chess\humanplayer.cpp
 	"humanplayer.h"
 
 1673352643 source:c:\users\radu\documents\ai-challenge\chess\moveby.cpp
 	"moveby.h"
+
+1674576834 source:c:\users\radu\documents\ai-challenge\chess\history.cpp
+	"history.h"
+	<iostream>
+
+1674575026 c:\users\radu\documents\ai-challenge\chess\history.h
+	<vector>
+	<string>
+	"config.h"
+	"piece.h"
 
