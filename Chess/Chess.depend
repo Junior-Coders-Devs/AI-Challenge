@@ -6,7 +6,7 @@
 	"humanplayer.h"
 	"game.h"
 
-1673550025 d:\documents\ai challenge\ai-challenge\chess\board.h
+1674925701 d:\documents\ai challenge\ai-challenge\chess\board.h
 	<vector>
 	<map>
 	"painter.h"
@@ -118,7 +118,7 @@
 1673550025 source:d:\documents\ai challenge\ai-challenge\chess\humanplayer.cpp
 	"humanplayer.h"
 
-1674506520 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
+1674507138 source:d:\documents\ai challenge\ai-challenge\chess\movevalidator.cpp
 	"movevalidator.h"
 	"board.h"
 	<iostream>
@@ -132,10 +132,11 @@
 1673548745 source:d:\documents\ai challenge\ai-challenge\chess\moveby.cpp
 	"moveby.h"
 
-1673552112 source:d:\documents\ai challenge\ai-challenge\chess\game.cpp
+1674926322 source:d:\documents\ai challenge\ai-challenge\chess\game.cpp
 	"game.h"
 	<iostream>
 
-1673550681 d:\documents\ai challenge\ai-challenge\chess\game.h
+1674926322 d:\documents\ai challenge\ai-challenge\chess\game.h
 	"humanplayer.h"
+	<vector>
 

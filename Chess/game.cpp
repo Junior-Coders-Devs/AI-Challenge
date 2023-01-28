@@ -4,17 +4,15 @@
 #include <iostream>
 #endif // DEBUG_LOGS
 
-Game::Game() {};
+Game::Game()
+{
+    this->init();
+}
 
 
 void Game::start()
 {
     bool isGameOpen = true;
-
-    std::vector<Player*> players(2);
-
-    players[0] = new HumanPlayer(_WHITE);
-    players[1] = new HumanPlayer(_BLACK);
 
     int playerIndex = 0;
 
@@ -42,4 +40,18 @@ void Game::start()
 
         playerIndex++;
     }
+}
+
+void Game::initializePlayers()
+{
+    players[0] = new HumanPlayer(_WHITE);
+    players[1] = new HumanPlayer(_BLACK);
+}
+
+void Game::init()
+{
+    board = Board::getInstance();
+
+    board->init();
+    this->initializePlayers();
 }

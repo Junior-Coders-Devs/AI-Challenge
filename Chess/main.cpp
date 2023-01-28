@@ -9,11 +9,6 @@ using namespace std;
 
 int main()
 {
-
-    Board * board = Board::getInstance();
-
-    board->init();
-
     Game * game = new Game;
 
     game->start();
