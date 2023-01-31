@@ -4,15 +4,25 @@
 
 CheckValidator::CheckValidator(){};
 
-bool CheckValidator::isCheckPosition(int row, int column, Color player)
+bool isNotOccupied(int row, int column, Color player)
 {
     Board* board = Board::getInstance();
+    std::vector<Piece*>ally = board->getPieces(player);
+    for(auto piece:ally)
+        if(piece->getRow()==row && piece->getColumn()==column)
+            return false;
+    return true;
+}
+
+bool CheckValidator::isCheckPosition(int row, int column, Color player)
+{
     Color enemyColor;
     if(player==_WHITE)
         enemyColor=_BLACK;
-    else enemyColor=_WHITE;
+    else
+        enemyColor=_WHITE;
+    Board* board = Board::getInstance();
     std::vector<Piece*>enemy = board->getPieces(enemyColor);
-    int size=enemy.size();
     for(auto piece:enemy)
     {
         std::vector<MoveBy>validPositions=piece->getValidPositions();
@@ -29,8 +39,13 @@ bool CheckValidator::isCheckPosition(int row, int column, Color player)
 
 void CheckValidator::isCheck(Color player)
 {
+    Color enemyColor;
+    if(player==_WHITE)
+        enemyColor=_BLACK;
+    else
+        enemyColor=_WHITE;
     Board* board = Board::getInstance();
-    std::vector<Piece*>pieces = board->getPieces(player);
+    std::vector<Piece*>pieces = board->getPieces(enemyColor);
     Piece* piece;
     int size=pieces.size();
     for(int i=0;i<size;i++)
@@ -41,14 +56,17 @@ void CheckValidator::isCheck(Color player)
         }
     if(CheckValidator::isCheckPosition(piece->getRow(),piece->getColumn(),piece->getColor()))
         std::cout<<"Sah, muta regele "<<piece->getColor()<<'\n';
-    ///Need every valid move
-    ///To be done as the last task
 }
 
 void CheckValidator::isCheckMate(Color playerToMove)
 {
+    Color enemyColor;
+    if(playerToMove==_WHITE)
+        enemyColor=_BLACK;
+    else
+        enemyColor=_WHITE;
     Board* board = Board::getInstance();
-    std::vector<Piece*>pieces = board->getPieces(playerToMove);
+    std::vector<Piece*>pieces = board->getPieces(enemyColor);
     Piece* piece;
     int size=pieces.size();
     for(int i=0;i<size;i++)
@@ -64,13 +82,14 @@ void CheckValidator::isCheckMate(Color playerToMove)
 
     for(auto moves:validPositions)
     {
-        int row=moves.getDiffRow()+piece->getRow();
-        int column=moves.getDiffColumn()+piece->getColumn();
-        if(isCheckPosition(row,column,piece->getColor()))
+
+        int row=piece->getRow()+moves.getDiffRow();
+        int column=piece->getColumn()+moves.getDiffColumn();
+        if((isCheckPosition(row,column,piece->getColor()) && isNotOccupied(row,column,piece->getColor())) || !isNotOccupied(row,column,piece->getColor()))
             cnt--;
     }
     if(cnt==0)
-        std::cout<<"Checkmate!! "<<piece->getColor()<<" a pierdut!";
+        std::cout<<"Checkmate!! "<<piece->getColor()<<" a pierdut!\n";
     else
-        std::cout<<"Nu e checkmate!!";
+        std::cout<<"Nu e checkmate!!\n";
 }
