@@ -3,6 +3,7 @@
 
 #include "board.h"
 #include "movevalidator.h"
+#include "history.h"
 
 
 class Player
@@ -14,7 +15,7 @@ public:
 
 protected:
 
-    virtual bool getMove(Piece*& piece, int &diffRow, int &diffCol);
+    virtual bool getMove(Piece*& piece, int &diffRow, int &diffCol, position &startPosition, bool &isTaken);
 
     Color playerColor;
     MoveValidator moveValidator;

@@ -1,6 +1,6 @@
 #include "king.h"
 
-King::King(int row, int column, Color color):Piece(row,column, color) {}
+King::King(int row, int column, Color color):Piece(row,column, color, "K") {}
 
 /**
  @inheritdoc

@@ -2,7 +2,7 @@
 #include "movevalidator.h"
 
 
-Bishop::Bishop(int row, int column, Color color): Piece(row, column, color) {}
+Bishop::Bishop(int row, int column, Color color): Piece(row, column, color, "B") {}
 
 /**
  @inheritdoc

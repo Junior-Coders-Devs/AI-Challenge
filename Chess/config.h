@@ -1,6 +1,6 @@
 #ifndef H_CONFIG
 #define H_CONFIG
-
+#include<string>
 /// Uncomment below define to enable logs
 // #define DEBUG_LOGS
 
@@ -70,5 +70,15 @@ struct position
 {
     int row;
     int column;
+};
+
+struct histMove{
+    int ind;
+    std::string pieceShortName;
+    position from;
+    position to;
+    Color color;
+    bool isTaken;
+
 };
 #endif // H_CONFIG

@@ -1,7 +1,7 @@
 #include "pawn.h"
 #include "movevalidator.h"
 
-Pawn::Pawn(int row, int column, Color color) : Piece(row, column, color) {}
+Pawn::Pawn(int row, int column, Color color) : Piece(row, column, color, "") {}
 
 
 /**

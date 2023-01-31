@@ -1,6 +1,6 @@
 #include "queen.h"
 
-Queen::Queen(int row, int column, Color color): Piece(row, column, color) {}
+Queen::Queen(int row, int column, Color color): Piece(row, column, color, "Q") {}
 
 /**
  * @inheritdoc
