@@ -39,6 +39,8 @@
 		<Unit filename="checkvalidator.cpp" />
 		<Unit filename="checkvalidator.h" />
 		<Unit filename="config.h" />
+		<Unit filename="game.cpp" />
+		<Unit filename="game.h" />
 		<Unit filename="humanplayer.cpp" />
 		<Unit filename="humanplayer.h" />
 		<Unit filename="king.cpp" />
@@ -46,6 +48,8 @@
 		<Unit filename="knight.cpp" />
 		<Unit filename="knight.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="moveby.cpp" />
+		<Unit filename="moveby.h" />
 		<Unit filename="moves.txt" />
 		<Unit filename="movevalidator.cpp" />
 		<Unit filename="movevalidator.h" />

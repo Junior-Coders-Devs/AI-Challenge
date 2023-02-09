@@ -1,12 +1,11 @@
 #include "humanplayer.h"
 
-
 HumanPlayer::HumanPlayer(Color playerColor) : Player(playerColor) {}
 
 
 bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol)
 {
-    Board* board = Board::getInstance();
+    Board * board = Board::getInstance();
 
     position humanPosition = getPositionClicked();
 
