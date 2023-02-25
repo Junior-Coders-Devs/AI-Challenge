@@ -4,7 +4,7 @@
 HumanPlayer::HumanPlayer(Color playerColor) : Player(playerColor) {}
 
 
-bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol, position &startPosition, bool &Taken)
+bool HumanPlayer::getMove(Piece* &piece, Piece* &enemyPiece, int &diffRow, int &diffCol, position &startPosition, bool &Taken)
 {
     Board* board = Board::getInstance();
 
@@ -23,9 +23,9 @@ bool HumanPlayer::getMove(Piece* &piece, int &diffRow, int &diffCol, position &s
     diffRow = targetPosition.row - humanPosition.row;
     diffCol = targetPosition.column - humanPosition.column;
 
-    Piece * enemyPiece = board->getPieceForPosition(targetPosition.row, targetPosition.column);
+    enemyPiece = board->getPieceForPosition(targetPosition.row, targetPosition.column);
 
-    if(enemyPiece != NULL && enemyPiece->getColor() == piece->getColor())
+    if(enemyPiece != NULL && (enemyPiece->getColor() == piece->getColor() && !(isCastling(piece, enemyPiece))))
         return 0;
     startPosition = humanPosition;
     if(enemyPiece != NULL){

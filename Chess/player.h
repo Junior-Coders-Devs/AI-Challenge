@@ -4,7 +4,7 @@
 #include "board.h"
 #include "movevalidator.h"
 #include "history.h"
-
+#include<iostream>
 
 class Player
 {
@@ -15,8 +15,8 @@ public:
 
 protected:
 
-    virtual bool getMove(Piece*& piece, int &diffRow, int &diffCol, position &startPosition, bool &isTaken);
-
+    bool isCastling(Piece* &firstPiece, Piece* &secondPiece);
+    virtual bool getMove(Piece*& piece, Piece*&enemyPiece, int &diffRow, int &diffCol, position &startPosition, bool &isTaken);
     Color playerColor;
     MoveValidator moveValidator;
     PiecePainter piecePainter;

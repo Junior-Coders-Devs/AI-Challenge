@@ -38,6 +38,8 @@
 		<Unit filename="board.h" />
 		<Unit filename="checkvalidator.cpp" />
 		<Unit filename="checkvalidator.h" />
+		<Unit filename="chesslog.cpp" />
+		<Unit filename="chesslog.h" />
 		<Unit filename="config.h" />
 		<Unit filename="history.cpp" />
 		<Unit filename="history.h" />

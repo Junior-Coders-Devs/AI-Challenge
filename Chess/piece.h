@@ -25,12 +25,14 @@ class Piece {
         virtual PieceType getType();
         std::string getShortName();
         std::vector<MoveBy> getValidPositions();
+        bool getWasMoved();
 
     protected:
         int row;
         int column;
         Color color;
         std::string shortName;
+        bool wasMoved;
 };
 
 #endif // H_PIECE

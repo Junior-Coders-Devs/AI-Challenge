@@ -7,6 +7,7 @@ Piece::Piece(int row, int column, Color color, std::string shortName) {
     this->column = column;
     this->color = color;
     this->shortName = shortName;
+    this->wasMoved = false;
 }
 
 /**
@@ -17,7 +18,7 @@ Piece::Piece(int row, int column, Color color, std::string shortName) {
     diffColumn -> difference in columns (positive - right, negative - left)
 */
 void Piece::makeMove(int diffRow, int diffColumn) {
-    // To be implemented by every type of piece
+    this->wasMoved = true;
 }
 
 std::vector<MoveBy> Piece::getValidPositions()
@@ -84,6 +85,10 @@ Color Piece::getColor() const {
 
 std::string Piece::getShortName(){
     return shortName;
+}
+
+bool Piece::getWasMoved(){
+    return wasMoved;
 }
 
 PieceType Piece::getType() {}

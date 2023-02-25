@@ -7,7 +7,7 @@ class HumanPlayer : public Player
 {
     public:
         HumanPlayer(Color color);
-        bool getMove(Piece* &piece, int &diffRow, int &diffCol, position &startPosition, bool &Taken) override;
+        bool getMove(Piece* &piece, Piece* &enemyPiece, int &diffRow, int &diffCol, position &startPosition, bool &Taken) override;
 
     private:
         position getPositionClicked();
