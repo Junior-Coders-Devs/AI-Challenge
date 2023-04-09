@@ -1,10 +1,10 @@
-#include "movevalidator.h"
+#include "movevalidatorv2.h"
 #include "board.h"
 
 
-MoveValidator::MoveValidator() {}
+MoveValidatorV2::MoveValidatorV2() {}
 
-bool MoveValidator::validateMove(int diffRow, int diffCol, int row, int column)
+bool MoveValidatorV2::validateMove(int diffRow, int diffCol, int row, int column)
 {
     Piece* movedPiece = Board::getInstance()->getPieceForPosition(row, column);
     ChessRulesValidator* rulesValidator = getChessRuleValidator(movedPiece);
@@ -12,7 +12,7 @@ bool MoveValidator::validateMove(int diffRow, int diffCol, int row, int column)
     return rulesValidator->validateRules(movedPiece, diffRow, diffCol);
 }
 
-ChessRulesValidator* MoveValidator::getChessRuleValidator(Piece* movedPiece) {
+ChessRulesValidator* MoveValidatorV2::getChessRuleValidator(Piece* movedPiece) {
     switch(movedPiece->getType()) {
         case PAWN:
             return new PawnChessRulesValidator;

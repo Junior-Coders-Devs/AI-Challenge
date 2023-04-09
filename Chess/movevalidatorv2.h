@@ -1,5 +1,5 @@
-#ifndef H_MOVEVALIDATOR
-#define H_MOVEVALIDATOR
+#ifndef H_MOVEVALIDATOR_V2
+#define H_MOVEVALIDATOR_V2
 
 #include "board.h"
 #include "chessrulesvalidator.h"
@@ -10,10 +10,10 @@
 #include "queenchessrulesvalidator.h"
 #include "pawnchessrulesvalidator.h"
 
-class MoveValidator
+class MoveValidatorV2
 {
 public:
-    MoveValidator();
+    MoveValidatorV2();
 
     bool validateMove(int diffRow, int diffCol, int row, int column);
 
@@ -23,4 +23,4 @@ private:
 
 
 
-#endif // H_MOVEVALIDATOR
+#endif // H_MOVEVALIDATOR_V2
