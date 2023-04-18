@@ -10,6 +10,8 @@ class CheckValidator
         CheckValidator();
         void isCheck(Color player);
         void isCheckMate(Color playerToMove);
+    private:
+        bool isCheckPosition(int row,int column, Color player);
 };
 
 

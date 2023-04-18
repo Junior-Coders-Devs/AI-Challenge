@@ -3,7 +3,7 @@
 
 #include "board.h"
 #include "movevalidator.h"
-
+#include "checkvalidator.h"
 
 class Player
 {
@@ -20,6 +20,7 @@ protected:
     MoveValidator moveValidator;
     PiecePainter piecePainter;
     Painter painter;
+    CheckValidator* CV;
 };
 
 
