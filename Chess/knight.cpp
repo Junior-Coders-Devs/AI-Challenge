@@ -24,7 +24,6 @@ void Knight::makeMove(int diffRow, int diffColumn) {
 
     this->setRow(currentRow + diffRow);
     this->setColumn(currentColumn + diffColumn);
-
 }
 
 bool Knight::isMoveLegal(int diffRow, int diffColumn)

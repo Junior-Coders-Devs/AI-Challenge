@@ -6,7 +6,7 @@
 
 class RuleValidator {
 public:
-    virtual bool validateRule(Piece* movedPiece, int diffRow, int diffColumn);
+    virtual bool validateRule(Piece*& movedPiece, int diffRow, int diffColumn);
 };
 
 #endif // H_RULE_VALIDATOR

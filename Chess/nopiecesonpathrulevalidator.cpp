@@ -12,8 +12,7 @@ int getSign(int diff) {
     Validates there are no pieces on the path from current position of the moved piece to target position
     The only exception is where there is an opponent piece on target position. This exception is allowed
 */
-bool NoPiecesOnPathRuleValidator::validateRule(Piece* movedPiece, int diffRow, int diffColumn) {
-
+bool NoPiecesOnPathRuleValidator::validateRule(Piece*& movedPiece, int diffRow, int diffColumn) {
     int stepRow = getSign(diffRow);
     int stepColumn = getSign(diffColumn);
     int totalSteps = std::max(std::abs(diffRow), std::abs(diffColumn));
