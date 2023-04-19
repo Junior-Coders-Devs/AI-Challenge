@@ -25,9 +25,16 @@ class Piece {
         virtual PieceType getType();
         std::vector<MoveBy> getValidPositions();
 
+        void setFirstMoveTime(int firstMoveTime);
+        int getFirstMoveTime();
+
+        int getNumberOfMoves();
+
     protected:
         int row;
         int column;
+        int firstMoveTime = 0;
+        static int numberofMoves;
         Color color;
 };
 

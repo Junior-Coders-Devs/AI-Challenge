@@ -2,7 +2,6 @@
 #ifdef DEBUG_LOGS
 #include <iostream>
 #endif // DEBUG_LOGS
-
 Player::Player(Color playerColor)
 {
     this->playerColor = playerColor;
@@ -10,7 +9,8 @@ Player::Player(Color playerColor)
 
 bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
 
-bool Player::makeMove() {
+bool Player::makeMove()
+{
 
     Board* board = Board::getInstance();
     Piece* piece;
@@ -21,9 +21,36 @@ bool Player::makeMove() {
     if(!ok)
         return false;
 
-    if(piece->isValidMove(diffRow, diffCol)) {
+    if(piece->isValidMove(diffRow, diffCol))
+    {
 
-        if(moveValidator.validateMove(diffRow, diffCol, piece->getRow(), piece->getColumn())) {
+        if(moveValidator.validateSpecialMove(diffRow, diffCol, piece->getRow(), piece->getColumn()))
+        {
+            Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
+
+            piece->makeMove(diffRow, diffCol);
+            piecePainter.paintPiece(piece->getRow(), piece->getColumn(), piece->getType(), piece->getColor());
+
+            int lineIndex = piece->getRow() - diffRow;
+            int columnIndex = piece->getColumn();
+
+            Color cellColor = piecePainter.getColorForCell(lineIndex, columnIndex);
+
+            painter.drawEmptySquare(lineIndex, columnIndex, cellColor);
+            painter.drawEmptySquare(lineIndex, columnIndex - diffCol, piecePainter.getColorForCell(lineIndex, columnIndex - diffCol));
+
+            Color oppositeColor = pieceColor;
+
+            if(pieceColor == _WHITE) oppositeColor = _BLACK;
+            else oppositeColor = _WHITE;
+
+            board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
+
+            return true;
+        }
+
+        if(moveValidator.validateMove(diffRow, diffCol, piece->getRow(), piece->getColumn()))
+        {
 
             Color pieceColor = board->getColorForCell(piece->getRow(), piece->getColumn());
 

@@ -8,10 +8,10 @@ Rook::Rook(int row, int column, Color color):Piece(row, column, color){}
 */
 void Rook::makeMove(int diffRow, int diffColumn)
 {
-
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
 }
 
 

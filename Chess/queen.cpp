@@ -11,6 +11,7 @@ void Queen::makeMove(int diffRow, int diffColumn)
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
 }
 
 bool Queen::isValidMove(int diffRow, int diffColumn)
