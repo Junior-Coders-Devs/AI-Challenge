@@ -11,6 +11,7 @@ void King::makeMove(int diffRow, int diffColumn)
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
 }
 
 bool King::isMoveLegal(int diffRow, int diffColumn)
