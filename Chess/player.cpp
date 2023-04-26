@@ -6,7 +6,6 @@
 Player::Player(Color playerColor)
 {
     this->playerColor = playerColor;
-    moveValidator.setColor(playerColor);
 }
 
 bool Player::getMove(Piece*& piece, int &diffRow, int &diffCol) {}
