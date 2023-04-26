@@ -166,3 +166,8 @@ Color Board::getColorForCell(int row, int column)
 
     return _UNDEFINED;
 }
+
+void Board::addQueen(int row, int column, Color color)
+{
+    pieces[color].push_back(new Queen(row, column, color));
+}

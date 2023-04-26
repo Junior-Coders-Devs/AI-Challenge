@@ -12,6 +12,7 @@ void Bishop::makeMove(int diffRow, int diffColumn){
     setRow(this->row + diffRow);
     setColumn(this->column + diffColumn);
 
+    numberofMoves++;
 }
 
 bool Bishop::isValidMove(int diffRow, int diffColumn)

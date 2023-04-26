@@ -23,6 +23,8 @@ class Board {
         Piece* getPieceForPosition(int row, int column);
         void deletePiece(int row, int column, Color color);
         Color getColorForCell(int row, int column);
+        void addQueen(int row, int column, Color color);
+
     private:
 
         Board();

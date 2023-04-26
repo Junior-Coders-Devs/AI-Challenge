@@ -30,3 +30,15 @@ ChessRulesValidator* MoveValidator::getChessRuleValidator(Piece* movedPiece) {
 
     return NULL;
 }
+
+bool MoveValidator::validateSpecialMove(int diffRow, int diffCol, int row, int column)
+{
+    Piece * movedPiece = Board::getInstance()->getPieceForPosition(row, column);
+
+    EnPassantRuleValidator * enPassantRuleValidator = new EnPassantRuleValidator;
+    bool isEnpassant = enPassantRuleValidator->validateRule(movedPiece, diffRow, diffCol);
+
+    delete enPassantRuleValidator;
+
+    return isEnpassant;
+}

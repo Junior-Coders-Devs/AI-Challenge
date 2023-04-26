@@ -16,6 +16,7 @@ public:
     MoveValidator();
 
     bool validateMove(int diffRow, int diffCol, int row, int column);
+    bool validateSpecialMove(int diffRow, int diffCol, int row, int column);
 
 private:
     ChessRulesValidator* getChessRuleValidator(Piece* movedPiece);
