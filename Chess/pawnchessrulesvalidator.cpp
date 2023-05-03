@@ -12,5 +12,4 @@ PawnChessRulesValidator::PawnChessRulesValidator() {
     rules.push_back(new MoveBackRuleValidator);
     rules.push_back(new MoveDiagonallyRuleValidator);
     rules.push_back(new MoveSidewaysRuleValidator);
-    rules.push_back(new ChangeToQueenRuleValidator);
 }

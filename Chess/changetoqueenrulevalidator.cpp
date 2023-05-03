@@ -12,7 +12,7 @@ bool ChangeToQueenRuleValidator::validateRule(Piece*& movedPiece, int diffRow, i
     if((color == _BLACK && row + diffRow == 1) || (color == _WHITE && row + diffRow == 8))
     {
         board->deletePiece(row, column, color);
-        board->addQueen(row, column, color);
+        board->addPiece(row, column, color, QUEEN);
         movedPiece = board->getPieceForPosition(row, column);
     }
 

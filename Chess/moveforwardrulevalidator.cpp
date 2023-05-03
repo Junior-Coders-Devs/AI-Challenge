@@ -2,6 +2,9 @@
 
 bool MoveForwardRuleValidator::validateRule(Piece *& movedPiece, int diffRow, int diffCol)
 {
+    if(diffRow && diffCol)
+        return true;
+
     int row = movedPiece->getRow();
     int column = movedPiece->getColumn();
 

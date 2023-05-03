@@ -3,6 +3,7 @@
 
 #include "board.h"
 #include "movevalidator.h"
+#include "convertvalidator.h"
 
 
 class Player
@@ -20,6 +21,7 @@ protected:
     MoveValidator moveValidator;
     PiecePainter piecePainter;
     Painter painter;
+    ConvertValidator convertValidator;
 };
 
 

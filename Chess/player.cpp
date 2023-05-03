@@ -46,6 +46,9 @@ bool Player::makeMove()
 
             board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
 
+            if(piece->getType() == PAWN)
+                convertValidator.convertPawnIntoQueen(board, &piecePainter);
+
             return true;
         }
 
@@ -82,7 +85,13 @@ bool Player::makeMove()
             std::cout << "STERG PIESA DE PE POZITIA " << piece->getRow() << ' ' << piece->getColumn() << '\n';
 #endif // DEBUG_LOGS
 
+            int row = piece->getRow(), column = piece->getColumn();
+            PieceType pieceType = piece->getType();
+
             board->deletePiece(piece->getRow(), piece->getColumn(), oppositeColor);
+
+            if(piece->getType() == PAWN)
+                convertValidator.convertPawnIntoQueen(board, &piecePainter);
 
             return true;
         }

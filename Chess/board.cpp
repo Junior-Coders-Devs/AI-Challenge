@@ -8,9 +8,11 @@ Board* Board::instance = NULL;
 
 Board::Board() {}
 
-Board* Board::getInstance() {
+Board* Board::getInstance()
+{
 
-    if(instance == NULL) {
+    if(instance == NULL)
+    {
         instance = new Board;
     }
 
@@ -167,7 +169,27 @@ Color Board::getColorForCell(int row, int column)
     return _UNDEFINED;
 }
 
-void Board::addQueen(int row, int column, Color color)
+void Board::addPiece(int row, int column, Color color, PieceType type)
 {
-    pieces[color].push_back(new Queen(row, column, color));
+    switch(type)
+    {
+    case QUEEN:
+        pieces[color].push_back(new Queen(row, column, color));
+        break;
+    case KNIGHT:
+        pieces[color].push_back(new Knight(row, column, color));
+        break;
+    case PAWN:
+        pieces[color].push_back(new Pawn(row, column, color));
+        break;
+    case KING:
+        pieces[color].push_back(new King(row, column, color));
+        break;
+    case BISHOP:
+        pieces[color].push_back(new Bishop(row, column, color));
+        break;
+    case ROOK:
+        pieces[color].push_back(new Rook(row, column, color));
+        break;
+    }
 }

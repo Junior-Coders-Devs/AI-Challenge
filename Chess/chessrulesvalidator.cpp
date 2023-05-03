@@ -9,6 +9,5 @@ bool ChessRulesValidator::validateRules(Piece* movedPiece, int diffRow, int diff
             return false;
         }
     }
-
     return true;
 }
